@@ -7,7 +7,7 @@ import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/vite";
 export default defineUserConfig({
   lang: "zh-Cn",
-  title: "哈哈",
+  title: "chendj89",
   theme: localTheme({
     // 默认主题配置项
   }),
