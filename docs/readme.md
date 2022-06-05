@@ -27,13 +27,6 @@ button/disabled
 
 ## 链接按钮
 
-:::warning
-
-`type="text"` 已被 **废弃**，将于版本 <VersionTag version="3.0.0" /> 时 **移除**，请考虑切换至新的 API。
-
-新的 API `link` 于 <VersionTag version="2.2.1" /> 版本添加，同时可以使用 `type` API 设置链接按钮的主题样式。
-
-:::
 
 :::demo
 
@@ -43,13 +36,6 @@ button/link
 
 ## 文字按钮
 
-:::tip
-
-文字按钮在现在有了全新的设计样式。 <el-tag round effect="plain" size="small">2.2.0</el-tag> 如果您想要使用老版样式的按钮，可以考虑使用 [Link](./link.md#basic) 组件。
-
-API也已更新，由于 `type` 属性会同时控制按钮的样式， 因此我们通过一个新的 API `text: boolean` 来控制文字按钮。
-
-:::
 
 没有边框和背景色的按钮。
 
