@@ -2,7 +2,7 @@
   <p class="sm" v-html="decodedDescription" />
   <div class="example">
     <div class="example-showcase">
-      <component :is="props.path" v-bind="$attrs" />
+      <component :is="props.path" v-bind="$attrs" :key="props.path" />
     </div>
     <ElDivider class="m-0" />
     <div class="op-btns">
