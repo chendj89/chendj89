@@ -60,6 +60,7 @@ const props = defineProps({
 
 const sourceVisible = ref(false);
 const toggleSource = () => {
+  console.log(sourceVisible)
   sourceVisible.value = !sourceVisible.value;
 }
 const decodedDescription = computed(() =>
