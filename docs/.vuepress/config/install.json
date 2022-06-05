@@ -26,12 +26,6 @@
       "filePath": "../examples/button/icon.vue",
       "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\button\\icon.vue"
     }, {
-      "comName": "ButtonLink",
-      "fileName": "link.vue",
-      "mdName": "button/link",
-      "filePath": "../examples/button/link.vue",
-      "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\button\\link.vue"
-    }, {
       "comName": "ButtonLoading",
       "fileName": "loading.vue",
       "mdName": "button/loading",
@@ -54,11 +48,29 @@
       "filePath": "../examples/demo/container.vue",
       "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\container.vue"
     }, {
+      "comName": "DemoSidebarlink",
+      "fileName": "sidebarlink.vue",
+      "mdName": "demo/sidebarlink",
+      "filePath": "../examples/demo/sidebarlink.vue",
+      "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\sidebarlink.vue"
+    }, {
+      "comName": "DemoSlidebar",
+      "fileName": "slidebar.vue",
+      "mdName": "demo/slidebar",
+      "filePath": "../examples/demo/slidebar.vue",
+      "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\slidebar.vue"
+    }, {
       "comName": "DemoSourcecode",
       "fileName": "sourcecode.vue",
       "mdName": "demo/sourcecode",
       "filePath": "../examples/demo/sourcecode.vue",
       "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\sourcecode.vue"
+    }, {
+      "comName": "DemoToc",
+      "fileName": "toc.vue",
+      "mdName": "demo/toc",
+      "filePath": "../examples/demo/toc.vue",
+      "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\toc.vue"
     }]
   },
   "upload": {

@@ -84,3 +84,9 @@ div[class*='language-'] > pre[class*='language-'] {
     content: none;
   }
 }
+.sidebar {
+  border-right: none;
+}
+.navbar {
+  border-bottom: 1px solid var(--border-color);
+}
