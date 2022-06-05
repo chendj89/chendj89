@@ -5,8 +5,9 @@ import { localTheme } from "./theme";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/vite";
+
 export default defineUserConfig({
-  base: process.env.DOC_ENV !== "production" ? "/" : "/chendj89/",
+  base: process.env.NODE_ENV !== "production" ? "/" : "/chendj89/",
   lang: "zh-Cn",
   title: "chendj89",
   theme: localTheme({
