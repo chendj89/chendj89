@@ -1,0 +1,74 @@
+{
+  "button": {
+    "name": "button",
+    "children": [{
+      "comName": "ButtonBasic",
+      "fileName": "basic.vue",
+      "mdName": "button/basic",
+      "filePath": "../examples/button/basic.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\button\\basic.vue"
+    }, {
+      "comName": "ButtonDisabled",
+      "fileName": "disabled.vue",
+      "mdName": "button/disabled",
+      "filePath": "../examples/button/disabled.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\button\\disabled.vue"
+    }, {
+      "comName": "ButtonGroup",
+      "fileName": "group.vue",
+      "mdName": "button/group",
+      "filePath": "../examples/button/group.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\button\\group.vue"
+    }, {
+      "comName": "ButtonIcon",
+      "fileName": "icon.vue",
+      "mdName": "button/icon",
+      "filePath": "../examples/button/icon.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\button\\icon.vue"
+    }, {
+      "comName": "ButtonLink",
+      "fileName": "link.vue",
+      "mdName": "button/link",
+      "filePath": "../examples/button/link.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\button\\link.vue"
+    }, {
+      "comName": "ButtonLoading",
+      "fileName": "loading.vue",
+      "mdName": "button/loading",
+      "filePath": "../examples/button/loading.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\button\\loading.vue"
+    }, {
+      "comName": "ButtonText",
+      "fileName": "text.vue",
+      "mdName": "button/text",
+      "filePath": "../examples/button/text.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\button\\text.vue"
+    }]
+  },
+  "demo": {
+    "name": "demo",
+    "children": [{
+      "comName": "DemoContainer",
+      "fileName": "container.vue",
+      "mdName": "demo/container",
+      "filePath": "../examples/demo/container.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\demo\\container.vue"
+    }, {
+      "comName": "DemoSourcecode",
+      "fileName": "sourcecode.vue",
+      "mdName": "demo/sourcecode",
+      "filePath": "../examples/demo/sourcecode.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\demo\\sourcecode.vue"
+    }]
+  },
+  "upload": {
+    "name": "upload",
+    "children": [{
+      "comName": "UploadBox",
+      "fileName": "box.vue",
+      "mdName": "upload/box",
+      "filePath": "../examples/upload/box.vue",
+      "mdPath": "F:\\phone01\\docs\\.vuepress\\examples\\upload\\box.vue"
+    }]
+  }
+}
