@@ -26,7 +26,7 @@
         </ElIcon>
       </ElTooltip>
       <ElTooltip :content="'查看源代码'" :show-arrow="false">
-        <ElIcon :size="16" class="op-btn github" style="color: var(--text-color-light)" @click="toggleSource">
+        <ElIcon :size="16" class="op-btn github" style="color: var(--text-color-light)" @click="toggleSourceVisible()">
           <a :href="'javascript:void(0);'">
             <i-ri-code-line />
           </a>
@@ -37,7 +37,7 @@
       <DemoSourcecode v-show="sourceVisible" :source="source" />
     </ElCollapseTransition>
     <Transition name="el-fade-in-linear">
-      <div v-show="sourceVisible" class="example-float-control" @click="toggleSource">
+      <div v-show="sourceVisible" class="example-float-control" @click="toggleSourceVisible(false)">
         <ElIcon :size="16">
           <CaretTop />
         </ElIcon>
@@ -58,11 +58,7 @@ const props = defineProps({
   description: String
 });
 
-const sourceVisible = ref(false);
-const toggleSource = () => {
-  console.log(sourceVisible)
-  sourceVisible.value = !sourceVisible.value;
-}
+const [sourceVisible, toggleSourceVisible] = useToggle()
 const decodedDescription = computed(() =>
   decodeURIComponent(props.description)
 )
