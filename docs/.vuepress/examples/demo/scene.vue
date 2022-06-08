@@ -66,7 +66,8 @@ const { copy, isSupported } = useClipboard({
   source: decodeURIComponent(props.rawSource),
   read: false,
 })
-const vm = getCurrentInstance()!;
+const vm = getCurrentInstance();
+console.log(vm)
 const copyCode = async () => {
   const { $message } = vm.appContext.config.globalProperties
   if (!isSupported) {

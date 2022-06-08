@@ -48,6 +48,12 @@
       "filePath": "../examples/demo/container.vue",
       "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\container.vue"
     }, {
+      "comName": "DemoFooter2",
+      "fileName": "footer2.vue",
+      "mdName": "demo/footer2",
+      "filePath": "../examples/demo/footer2.vue",
+      "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\footer2.vue"
+    }, {
       "comName": "DemoScene",
       "fileName": "scene.vue",
       "mdName": "demo/scene",

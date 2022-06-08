@@ -5,6 +5,7 @@ import ButtonIcon from "../examples/button/icon.vue";
 import ButtonLoading from "../examples/button/loading.vue";
 import ButtonText from "../examples/button/text.vue";
 import DemoContainer from "../examples/demo/container.vue";
+import DemoFooter2 from "../examples/demo/footer2.vue";
 import DemoScene from "../examples/demo/scene.vue";
 import DemoSidebarlink from "../examples/demo/sidebarlink.vue";
 import DemoSlidebar from "../examples/demo/slidebar.vue";
@@ -22,6 +23,7 @@ export default function imports(app: any) {
   app.component("ButtonLoading", ButtonLoading);
   app.component("ButtonText", ButtonText);
   app.component("DemoContainer", DemoContainer);
+  app.component("DemoFooter2", DemoFooter2);
   app.component("DemoScene", DemoScene);
   app.component("DemoSidebarlink", DemoSidebarlink);
   app.component("DemoSlidebar", DemoSlidebar);

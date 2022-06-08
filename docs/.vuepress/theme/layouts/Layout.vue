@@ -21,7 +21,9 @@ const hasHeader = computed(() => {
           </div>
           <DemoToc v-if="hasHeader"></DemoToc>
         </div>
+        <DemoFooter2></DemoFooter2>
       </main>
     </template>
+
   </ParentLayout>
 </template>
