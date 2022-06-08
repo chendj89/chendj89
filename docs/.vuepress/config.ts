@@ -9,7 +9,7 @@ import Components from "unplugin-vue-components/vite";
 export default defineUserConfig({
   base: process.env.NODE_ENV !== "production" ? "/" : "/chendj89/",
   lang: "zh-Cn",
-  title: "chendj89",
+  title: "文档",
   theme: localTheme({
     // 默认主题配置项
   }),
