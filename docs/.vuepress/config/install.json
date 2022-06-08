@@ -48,6 +48,12 @@
       "filePath": "../examples/demo/container.vue",
       "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\container.vue"
     }, {
+      "comName": "DemoScene",
+      "fileName": "scene.vue",
+      "mdName": "demo/scene",
+      "filePath": "../examples/demo/scene.vue",
+      "mdPath": "F:\\chendj89\\docs\\.vuepress\\examples\\demo\\scene.vue"
+    }, {
       "comName": "DemoSidebarlink",
       "fileName": "sidebarlink.vue",
       "mdName": "demo/sidebarlink",
