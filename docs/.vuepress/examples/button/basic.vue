@@ -7,6 +7,7 @@
     <el-button type="warning">Warning</el-button>
     <el-button type="danger">Danger</el-button>
     <el-button>中文</el-button>
+    <el-button color="#626aef">Default</el-button>
   </el-row>
 
   <el-row class="mb-4">
@@ -16,6 +17,7 @@
     <el-button type="info" plain>Info</el-button>
     <el-button type="warning" plain>Warning</el-button>
     <el-button type="danger" plain>Danger</el-button>
+    <el-button color="green">Default</el-button>
   </el-row>
 
   <el-row class="mb-4">
@@ -25,6 +27,7 @@
     <el-button type="info" round>Info</el-button>
     <el-button type="warning" round>Warning</el-button>
     <el-button type="danger" round>Danger</el-button>
+    <el-button color="blue">Default</el-button>
   </el-row>
 
   <el-row>
