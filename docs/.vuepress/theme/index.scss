@@ -1,0 +1,203 @@
+
+// css variables
+:root {
+  // layouts
+  --vp-screen-max-width: 1376px;
+
+  // colors
+  --text-color: var(--el-text-color-primary);
+  --text-color-light: var(--el-text-color-regular);
+  --text-color-lighter: var(--el-text-color-secondary);
+
+  --brand-color: var(--el-color-primary);
+  --brand-color-light: var(--el-color-primary-light-1);
+  --bg-brand-color: var(--el-color-primary-light-9);
+
+  --bg-color: var(--el-bg-color);
+  --bg-color-soft: #fafafa;
+  --bg-color-mute: #f2f2f2;
+  --border-color: var(--el-border-color);
+  --border-color-light: var(--el-border-color-lighter);
+
+  --font-family: var(--el-font-family);
+  --font-family-mono: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas,
+    'Courier New', monospace;
+
+  // info
+  --success-color: var(--el-color-success);
+  --warning-color: var(--el-color-warning);
+  --danger-color: var(--el-color-danger);
+
+  // header vars
+  --header-height: 55px;
+  --nav-height: 55px; // alias of --header-height
+
+  /* Screen Size */
+  --vp-screen-max-width: 1362px;
+
+  // sidebar
+  --vp-sidebar-width-mobile: 320px;
+  --vp-sidebar-width-small: 266px;
+
+  --sidebar-width-sm: 16rem;
+  --sidebar-width-xs: 20rem;
+  --content-min-width: 16rem;
+  --content-max-width: 48rem;
+
+  --nav-z-index: 41;
+  --sub-nav-z-index: 10;
+  --sidebar-z-index: 40;
+  --overlay-z-index: 30;
+  // --dropdown-z-index: 22;
+
+  // code block vars
+  --code-line-height: 1.4;
+  --code-font-size: var(--el-font-size-base);
+  --code-bg-color: var(--el-fill-color-light);
+  --code-text-color: var(--text-color);
+  --code-font-family: var(--font-family-mono);
+
+  // tip block
+  --block-tip-bg-color: rgba(var(--el-color-primary-rgb), 0.1);
+  --block-warning-bg-color: rgba(var(--el-color-danger-rgb), 0.1);
+
+  // link
+  --link-active-bg-color: rgba(var(--el-color-primary-rgb), 0.1);
+}
+
+.dark {
+  --bg-color-soft: #242424;
+  --bg-color-mute: #2c2c2c;
+}
+.m {
+  &-0 {
+    margin: 0;
+  }
+}
+
+.mb {
+  &-4 {
+    margin-bottom: 1rem;
+  }
+}
+h2 {
+  border-bottom: none;
+}
+.example {
+  border: 1px solid var(--border-color);
+  border-radius: var(--el-border-radius-base);
+  &-showcase {
+    padding: 1.5rem;
+    margin: 0.5px;
+    background-color: var(--bg-color);
+  }
+  .op-btns {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 2.5rem;
+
+    .el-icon {
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+    .op-btn {
+      margin: 0 0.5rem;
+      cursor: pointer;
+      color: var(--text-color-lighter);
+      transition: 0.2s;
+
+      &.github a {
+        transition: 0.2s;
+        color: var(--text-color-lighter);
+
+        &:hover {
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+
+  &-float-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--border-color);
+    height: 44px;
+    box-sizing: border-box;
+    background-color: var(--bg-color, #fff);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-top: -1px;
+    color: var(--el-text-color-secondary);
+    cursor: pointer;
+    position: sticky;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+
+    span {
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    &:hover {
+      color: var(--el-color-primary);
+    }
+  }
+}
+div[class*='language-'] > pre[class*='language-'] {
+  &::before {
+    content: none;
+  }
+}
+.sidebar {
+  border-right: none;
+}
+
+.el-table__body, 
+.el-table__footer, 
+.el-table__header {
+  margin: 0;
+  th,
+  td {
+    border: none;
+  }
+}
+.ant-table {
+  table {
+    display: table;
+    margin: 0;
+  }
+  th,
+  td {
+    border: none;
+  }
+}
+.el-icon {
+    --color: inherit;
+    height: 1em;
+    width: 1em;
+    line-height: 1em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    fill: currentColor;
+    color: var(--color);
+    font-size: inherit
+}
+
+.el-icon.is-loading {
+    -webkit-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite
+}
+
+.el-icon svg {
+  vertical-align: middle;
+    height: 1em;
+    width: 1em
+}
