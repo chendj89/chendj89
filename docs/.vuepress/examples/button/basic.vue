@@ -4,7 +4,8 @@
       <p>是否确定下载图片</p>
       <div style="text-align: right; margin: 0">
         <el-button size="mini" type="text" @click="visible = false">取消</el-button>
-        <el-button type="primary" size="mini" @click="$withBase(getImg(img.src))">确定</el-button>
+        <el-button type="primary" size="mini" @click="$withBase(getImg(img.src))"
+          :data-img="$withBase(getImg(img.src))">确定</el-button>
       </div>
       <el-image slot="reference" style="width: 72px; height: 72px" :src="$withBase(getImg(img.src))" :fit="img.fit">
       </el-image>
