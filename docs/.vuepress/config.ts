@@ -5,7 +5,7 @@ import Icons from "unplugin-icons/webpack";
 import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/webpack";
 export default defineConfig({
-  base: process.env.NODE_ENV !== "production" ? undefined : "/index/",
+  base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
   markdown: {
     extendMarkdown: (md) => {
