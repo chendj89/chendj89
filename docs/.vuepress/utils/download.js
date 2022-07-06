@@ -55,3 +55,20 @@ export const downloadImage = (url, downloadName) => {
     link.click();
   };
 };
+
+/**
+ * 单张图片下载
+ * @param url 图像链接
+ * @param downloadName 图片名称
+ */
+export const downloadLink = (url) => {
+  const link = document.createElement("a");
+  const reg = /[^/]+/g;
+  let fileName = url
+    .match(reg)
+    .filter((item) => item)
+    .pop();
+  link.setAttribute("download", fileName);
+  link.setAttribute("href", url);
+  link.click();
+};

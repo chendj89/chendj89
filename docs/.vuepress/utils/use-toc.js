@@ -7,7 +7,11 @@ export const resolveHeaders = (headers) => {
   return mapHeaders(groupHeaders(headers));
 };
 export function groupHeaders(headers) {
+  if (!headers) {
+    return [];
+  }
   headers = headers.map((h) => Object.assign({}, h));
+
   let lastH2;
 
   headers.forEach((h) => {

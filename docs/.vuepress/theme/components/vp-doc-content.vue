@@ -3,7 +3,7 @@
     <div class="doc-content-container">
       <Content ref="content" class="doc-content"></Content>
     </div>
-    <vp-toc v-if="hasHeader"></vp-toc>
+    <vp-toc :key="ins.proxy.$route.fullPath"></vp-toc>
   </div>
 </template>
 

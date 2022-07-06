@@ -10,6 +10,6 @@ radio/basic
 自定义校验 callback 必须被调用。 更多高级用法可参考 [async-validator](https://github.com/yiminghe/async-validator)
 :::
 
-:::demo 表单校验 `@submit.native.prevent`
+:::demo 取消默认表单回车提交 `@submit.native.prevent`
 form/basic
 :::
