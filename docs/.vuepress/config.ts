@@ -7,9 +7,7 @@ import Components from "unplugin-vue-components/webpack";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
-  head:[
-    ["link",{rel:"icon",href:"/assets/onepiece.jpg"}]
-  ],
+  head: [["link", { rel: "icon", href: "/assets/onepiece.jpg" }]],
   markdown: {
     extendMarkdown: (md) => {
       mdPlugin(md);
@@ -44,6 +42,45 @@ export default defineConfig({
           filename = filename.replace("navbar/", "").replace(/\/|\\/g, "-");
           return filename;
         },
+      },
+    ],
+    "@vuepress/plugin-nprogress",
+    [
+      "container",
+      {
+        type: "tip",
+        defaultTitle: {
+          "/": "提示",
+        },
+      },
+    ],
+    [
+      "container",
+      {
+        type: "warning",
+        defaultTitle: {
+          "/": "注意",
+        },
+      },
+    ],
+    [
+      "container",
+      {
+        type: "danger",
+        defaultTitle: {
+          "/": "警告",
+        },
+      },
+    ],
+    [
+      "container",
+      {
+        type: "details",
+        before: (info) =>
+          `<details class="custom-block details">${
+            info ? `<summary>${info}</summary>` : ""
+          }\n`,
+        after: () => "</details>\n",
       },
     ],
   ],
