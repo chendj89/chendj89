@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 const props = defineProps(["size"]);
 const style = ref({
   fontSize: props.size ? props.size + 'px' : '16px'

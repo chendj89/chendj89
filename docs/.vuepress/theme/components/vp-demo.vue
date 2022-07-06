@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, defineProps, onMounted } from 'vue'
 import IRiGithubLine from '~icons/ri/github-line';
 import IRiCodeLine from '~icons/ri/code-line';
 import IRiFileCopyLine from '~icons/ri/file-copy-line';
