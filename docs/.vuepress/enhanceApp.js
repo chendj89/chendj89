@@ -1,3 +1,4 @@
+import { post, get } from "@docs/.vuepress/utils/axios";
 import pageComponents from "@internal/page-components";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
@@ -17,5 +18,9 @@ export default ({
     Vue.component(name, component);
   }
   Vue.use(ElementUI);
+  Vue.prototype.$http = {
+    post,
+    get,
+  };
   // console.log(Object.keys(Vue.options.components));
 };

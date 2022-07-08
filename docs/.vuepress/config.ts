@@ -9,12 +9,17 @@ export default defineConfig({
   title: "Vue2.7",
   head: [["link", { rel: "icon", href: "/assets/onepiece.jpg" }]],
   markdown: {
+    toc: { includeLevel: [1, 2, 3] },
     extendMarkdown: (md) => {
       mdPlugin(md);
     },
   },
 
   configureWebpack: {
+    node: {
+      global: true,
+      process: true,
+    },
     resolve: {
       alias: {
         "@docs": path.resolve(__dirname, ".."),
