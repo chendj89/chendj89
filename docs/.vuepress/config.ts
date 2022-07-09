@@ -7,7 +7,15 @@ import Components from "unplugin-vue-components/webpack";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
-  head: [["link", { rel: "icon", href: "/assets/onepiece.jpg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/assets/onepiece.jpg" }],
+    [
+      "script",
+      {
+        src: "https://cdn.bootcdn.net/ajax/libs/Mock.js/1.0.1-beta3/mock-min.js",
+      },
+    ],
+  ],
   markdown: {
     toc: { includeLevel: [1, 2, 3] },
     extendMarkdown: (md) => {

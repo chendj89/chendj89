@@ -1,8 +1,6 @@
-import mockjs from "mockjs";
-
 export function post(url, params) {
   return new Promise((resolve) => {
-    resolve(mockjs.mock(params));
+    resolve(Mock.mock(params));
   }).then((data) => {
     return {
       code: 0,
@@ -13,7 +11,7 @@ export function post(url, params) {
 }
 export function get(url, params) {
   return new Promise((resolve) => {
-    resolve(mockjs.mock(params));
+    resolve(Mock.mock(params));
   }).then((data) => {
     return {
       code: 0,
