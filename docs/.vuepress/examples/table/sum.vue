@@ -38,6 +38,8 @@ const form = reactive({
   }
 });
 
+
+
 onMounted(() => {
   ins.proxy.$http.post("/api/mock", {
     "list|5": [
@@ -46,7 +48,7 @@ onMounted(() => {
         date: "@date(yyyy-MM-dd)",
         province: "@province",
         city: "@city",
-        "star|1-4": "@emoji",
+        "star|1-50": "@emoji",
         "age|18-60": 100,
         "num|1-100": 100,
         "remark": "@csentence(5, 10)",
