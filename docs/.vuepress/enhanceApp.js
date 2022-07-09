@@ -1,3 +1,4 @@
+import mockjs from "mockjs";
 import { post, get } from "@docs/.vuepress/utils/axios";
 import pageComponents from "@internal/page-components";
 import ElementUI from "element-ui";
