@@ -12,7 +12,7 @@ export default defineConfig({
     [
       "script",
       {
-        src: "https://cdn.bootcdn.net/ajax/libs/Mock.js/1.0.1-beta3/mock-min.js",
+        src: "//unpkg.com/mockjs@1.1.0/dist/mock.js",
       },
     ],
   ],
