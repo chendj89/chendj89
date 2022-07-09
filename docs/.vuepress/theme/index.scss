@@ -210,4 +210,10 @@ div[class*='language-'] > pre[class*='language-'] {
   .el-form-item__content {
     line-height: inherit;
   }
+  // 表格表单校验
+ .el-form-item.is-error .el-input__inner {
+  &::placeholder {
+    color:var(--el-color-danger) ;
+  }
+ }
 }
