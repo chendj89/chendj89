@@ -12,7 +12,7 @@ export default defineConfig({
     [
       "script",
       {
-        src: "//unpkg.com/mockjs@1.1.0/dist/mock.js",
+        src: "https://unpkg.com/mockjs@1.1.0/dist/mock.js",
       },
     ],
   ],
