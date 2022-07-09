@@ -1,7 +1,5 @@
-import axios from "axios";
 import mockjs from "mockjs";
 
-export default axios;
 export function post(url, params) {
   return new Promise((resolve) => {
     resolve(mockjs.mock(params));
