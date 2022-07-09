@@ -81,6 +81,12 @@ table/header
 table/headerFixedRight
 :::
 
+- 统计
+
+:::demo 
+table/sum
+:::
+
   
 
 <!-- 脚本 -->
