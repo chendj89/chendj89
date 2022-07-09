@@ -12,7 +12,7 @@
         <el-table-column prop="age" label="年纪" show-overflow-tooltip>
           <template slot-scope="scope">
             <el-form-item label-width="0" :prop="'list.' + scope.$index + '.age'" :rules="table.rules.age">
-              <el-input size="mini" v-model.number="scope.row.age" :placeholder="msg.message">
+              <el-input size="mini" v-model.number="scope.row.age" :placeholder="table.rules.age[0].message">
               </el-input>
             </el-form-item>
           </template>
