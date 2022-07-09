@@ -60,6 +60,29 @@ form/checkbox
 </template>
 ```
 
+
+### 表头
+
+- 简单的合并表头
+
+:::demo
+table/header
+:::
+
+- 简单的合并表头、固定右边
+
+  1. 合并表头需要指明宽度（子元素`el-table-column`之和），否则将显示不全
+
+  1. 合并表头不需要绑定`prop`，`prop`由子元素`el-table-column`绑定
+
+  1. 子元素`el-table-column`不需要添加`fixed='right'`
+
+:::demo 
+table/headerFixedRight
+:::
+
+  
+
 <!-- 脚本 -->
 <script setup>
 import { reactive } from "vue";
