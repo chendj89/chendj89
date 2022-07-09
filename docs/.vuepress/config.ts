@@ -16,10 +16,6 @@ export default defineConfig({
   },
 
   configureWebpack: {
-    node: {
-      global: true,
-      process: true,
-    },
     resolve: {
       alias: {
         "@docs": path.resolve(__dirname, ".."),
