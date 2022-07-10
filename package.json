@@ -20,7 +20,7 @@
     "@types/js-beautify": "^1.13.3",
     "@types/markdown-it-container": "^2.0.5",
     "@types/prismjs": "^1.26.0",
-    "@vueuse/core": "^8.7.5",
+    "@vueuse/core": "^8.9.1",
     "better-mock": "^0.3.4",
     "core-js": "2.6.12",
     "css-loader": "^6.7.1",
