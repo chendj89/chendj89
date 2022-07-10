@@ -1,4 +1,3 @@
-import Mock from "better-mock";
 export function post(url, params) {
   return new Promise((resolve) => {
     resolve(Mock.mock(params));

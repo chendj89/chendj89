@@ -7,7 +7,13 @@ import Components from "unplugin-vue-components/webpack";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
-  head: [["link", { rel: "icon", href: "/assets/onepiece.jpg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/assets/onepiece.jpg" }],
+    [
+      "script",
+      { src: "https://unpkg.com/better-mock@0.3.4/dist/mock.browser.js" },
+    ],
+  ],
   markdown: {
     toc: { includeLevel: [1, 2, 3] },
     extendMarkdown: (md) => {
