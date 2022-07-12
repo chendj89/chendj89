@@ -1,14 +1,25 @@
 <script setup>
-import { ref, getCurrentInstance, onMounted } from "vue";
+import { ref, computed, getCurrentInstance, onMounted } from "vue";
 import { getRoute } from "@docs/.vuepress/utils/route";
 let ins = getCurrentInstance();
 let menu = ref([]);
 onMounted(() => {
   menu.value = getRoute(ins);
 });
+const isActive = (item) => {
+  let $route = ins.proxy.$route;
+  let path = $route.path;
+  let active = false;
+  item.children.map((cell) => {
+    if (cell.link == path) {
+      active = true;
+    }
+  });
+  return active;
+};
 function pushRoute(item) {
   ins.proxy.$router.push(decodeURI(item.children[0].link));
-};
+}
 </script>
 
 <template>
@@ -16,13 +27,20 @@ function pushRoute(item) {
     <div class="header-container">
       <div class="logo-container">
         <router-link :to="'/'">
-          <div class="site-name"> {{ ins.proxy.$siteTitle }}</div>
+          <div class="site-name">{{ ins.proxy.$siteTitle }}</div>
         </router-link>
       </div>
       <div class="content">
         <nav class="navbar-menu menu">
-          <div v-for="(item, index) in menu" :key="index" class="link link-item is-menu-link" @click="pushRoute(item)">
-            {{ item.text }}</div>
+          <div
+            v-for="(item, index) in menu"
+            :key="index"
+            class="link link-item is-menu-link"
+            :class="{ active: isActive(item) }"
+            @click="pushRoute(item)"
+          >
+            {{ item.text }}
+          </div>
         </nav>
         <vp-social-links class="social-links" />
       </div>
@@ -36,7 +54,7 @@ function pushRoute(item) {
   align-items: center;
   height: var(--header-height);
 
-  >a {
+  > a {
     width: 128px;
   }
 
@@ -45,7 +63,6 @@ function pushRoute(item) {
     height: 100%;
   }
 }
-
 
 .is-menu-link {
   display: block;

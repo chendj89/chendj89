@@ -87,7 +87,17 @@ table/headerFixedRight
 table/sum
 :::
 
+
+
+## 输入框
+
+### 图标可点击
   
+:::demo 通过slot方式绑定事件
+input/icon
+:::
+
+
 
 <!-- 脚本 -->
 <script setup>
