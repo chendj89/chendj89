@@ -9,7 +9,8 @@ import { ref, onMounted, defineProps, getCurrentInstance } from "vue";
 const props = defineProps({
   source: String,
   path: String,
-  description: String
+  description: String,
+  origin:String,
 });
 let ins = getCurrentInstance();
 const show = ref(false);

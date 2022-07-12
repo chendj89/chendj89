@@ -40,7 +40,11 @@
         <vp-source-code v-show="sourceVisible" :source="source" />
       </ElCollapseTransition>
       <Transition name="el-fade-in-linear">
-        <div v-show="sourceVisible" class="example-float-control" @click="toggleSourceVisible(false)">
+        <div
+          v-show="sourceVisible"
+          class="example-float-control"
+          @click="toggleSourceVisible(false)"
+        >
           <el-icon :size="16">
             <i-ep-caret-top />
           </el-icon>
@@ -52,26 +56,28 @@
 </template>
 
 <script setup>
-import { ref, computed, defineProps, onMounted } from 'vue'
-import IRiGithubLine from '~icons/ri/github-line';
-import IRiCodeLine from '~icons/ri/code-line';
-import IRiFileCopyLine from '~icons/ri/file-copy-line';
-import IRiFlaskLine from '~icons/ri/flask-line';
+import { ref, computed, defineProps, onMounted } from "vue";
+import IRiGithubLine from "~icons/ri/github-line";
+import IRiCodeLine from "~icons/ri/code-line";
+import IRiFileCopyLine from "~icons/ri/file-copy-line";
+import IRiFlaskLine from "~icons/ri/flask-line";
 import IEpCaretTop from "~icons/ep/caret-top";
 import IEpSearch from "~icons/ep/search";
 const props = defineProps({
   source: String,
   path: String,
-  description: String
+  description: String,
+  origin: String,
 });
 
 const decodedDescription = computed(() =>
-  decodeURIComponent(props.description || '')
-)
+  decodeURIComponent(props.description || "")
+);
 
 const copyCode = () => {
-
-}
+  console.log(props);
+  decodeURIComponent(props.origin || "")
+};
 let sourceVisible = ref(false);
 function toggleSourceVisible(value) {
   if (value == undefined) {
@@ -79,16 +85,13 @@ function toggleSourceVisible(value) {
   } else {
     sourceVisible.value = value;
   }
-
 }
 
 let elto = ref(false);
 onMounted(() => {
   elto.value = true;
-})
-
+});
 </script>
-
 
 <style scoped lang="scss">
 .example {

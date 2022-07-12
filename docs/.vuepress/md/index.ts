@@ -42,7 +42,9 @@ export const mdPlugin = (md: any) => {
           sourceFile = sourceFile.replace("/", "-");
         }
         if (!source) throw new Error(`Incorrect source file: ${sourceFile}`);
-        return `<vp-container source="${encodeURIComponent(
+        console.log(source);
+        
+        return `<vp-container origin="${encodeURIComponent(source)}" source="${encodeURIComponent(
           highlight(source, "vue")
         )}" path="${sourceFile}" description="${encodeURIComponent(
           localMd.render(description)
