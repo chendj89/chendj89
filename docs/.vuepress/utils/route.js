@@ -19,6 +19,7 @@ export function getRoute(ins) {
         hash[urls[0]].children.push({
           text: decodeURI(t1),
           link: item.regularPath,
+          meta:item.frontmatter
         });
       }
     });

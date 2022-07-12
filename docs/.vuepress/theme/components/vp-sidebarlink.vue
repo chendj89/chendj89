@@ -15,7 +15,8 @@ let props = defineProps(['item'])
     active: isActive(item),
     'flex items-center': item.promotion,
   }" :to="item.link" @click="$emit('close')">
-    <p class="link-text">{{ item.text }}</p>
+    <p class="link-text" v-if="item.meta.en">{{ item.text }} {{item.meta.en}}</p>
+    <p class="link-text" v-else>{{ item.text }}</p>
   </router-link>
 </template>
 
