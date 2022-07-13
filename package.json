@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs --no-cache ",
+    "docs:dev": "vuepress dev docs --no-clear-screen --no-cache",
+    "docs:serve": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {

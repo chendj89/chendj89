@@ -54,39 +54,22 @@ export const mdPlugin = (md: any) => {
       }
     },
   } as ContainerOpts);
-  md.use(mdContainer, "code", {
-    validate(params) {
-      return !!params.trim().match(/^code\s*(.*)$/);
-    },
-    render(tokens, idx) {
-      const m = tokens[idx].info.trim().match(/^code\s*(.*)$/);
-      console.log(m);
-
-      if (tokens[idx].nesting === 1 /* means the tag is opening */) {
-        const description = m && m.length > 1 ? m[1] : "";
-        const sourceFileToken = tokens[idx + 2];
-        let source = "";
-        let sourceFile = sourceFileToken.children?.[0].content ?? "";
-        if (sourceFileToken.type === "inline") {
-          source = fs.readFileSync(
-            path.resolve(__dirname, "../examples", `${sourceFile}.vue`),
-            "utf-8"
-          );
-        }
-        if (sourceFile.includes("/")) {
-          sourceFile = sourceFile.replace("/", "-");
-        }
-        if (!source) throw new Error(`Incorrect source file: ${sourceFile}`);
-        return `<vp-container origin="${encodeURIComponent(
-          source
-        )}" source="${encodeURIComponent(
-          highlight(source, "vue")
-        )}" path="${sourceFile}" description="${encodeURIComponent(
-          localMd.render(description)
-        )}">`;
+  const wrap =
+    (wrapped) =>
+    (...args) => {
+      const [tokens, idx] = args;
+      const token = tokens[idx];
+      const rawCode = wrapped(...args);
+      if (token.tag == "code" && ["js"].includes(token.info)) {
+        let comment = highlight("//结果", "js");
+        return `${rawCode}<div class="language-js extra-class vp-code-container">${comment}<vp-code code="${encodeURIComponent(
+          token.content
+        )}">${token.content}</vp-code></div>`;
       } else {
-        return "</vp-container>";
+        return rawCode;
       }
-    },
-  } as ContainerOpts);
+    };
+  const { fence, code_block: codeBlock } = md.renderer.rules;
+  md.renderer.rules.fence = wrap(fence);
+  md.renderer.rules.code_block = wrap(codeBlock);
 };

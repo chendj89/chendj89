@@ -15,7 +15,7 @@ export default defineConfig({
     ],
   ],
   markdown: {
-    lineNumbers: true,
+    lineNumbers: false,
     toc: { includeLevel: [1, 2, 3] },
     extendMarkdown: (md) => {
       mdPlugin(md);
