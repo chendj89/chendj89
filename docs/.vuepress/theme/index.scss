@@ -220,3 +220,13 @@ div[class*='language-'] > pre[class*='language-'] {
   vertical-align: middle;
  }
 }
+
+.line-numbers-wrapper {
+  border-right: 1px solid var(--el-overlay-color-lighter2);
+  padding-top: 25px;
+}
+.line-numbers-mode {
+  div[class*=language-], pre[class*=language-] {
+    padding-left: 15px;
+  }
+}

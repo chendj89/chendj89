@@ -42,7 +42,44 @@ export const mdPlugin = (md: any) => {
           sourceFile = sourceFile.replace("/", "-");
         }
         if (!source) throw new Error(`Incorrect source file: ${sourceFile}`);
-        return `<vp-container origin="${encodeURIComponent(source)}" source="${encodeURIComponent(
+        return `<vp-container origin="${encodeURIComponent(
+          source
+        )}" source="${encodeURIComponent(
+          highlight(source, "vue")
+        )}" path="${sourceFile}" description="${encodeURIComponent(
+          localMd.render(description)
+        )}">`;
+      } else {
+        return "</vp-container>";
+      }
+    },
+  } as ContainerOpts);
+  md.use(mdContainer, "code", {
+    validate(params) {
+      return !!params.trim().match(/^code\s*(.*)$/);
+    },
+    render(tokens, idx) {
+      const m = tokens[idx].info.trim().match(/^code\s*(.*)$/);
+      console.log(m);
+
+      if (tokens[idx].nesting === 1 /* means the tag is opening */) {
+        const description = m && m.length > 1 ? m[1] : "";
+        const sourceFileToken = tokens[idx + 2];
+        let source = "";
+        let sourceFile = sourceFileToken.children?.[0].content ?? "";
+        if (sourceFileToken.type === "inline") {
+          source = fs.readFileSync(
+            path.resolve(__dirname, "../examples", `${sourceFile}.vue`),
+            "utf-8"
+          );
+        }
+        if (sourceFile.includes("/")) {
+          sourceFile = sourceFile.replace("/", "-");
+        }
+        if (!source) throw new Error(`Incorrect source file: ${sourceFile}`);
+        return `<vp-container origin="${encodeURIComponent(
+          source
+        )}" source="${encodeURIComponent(
           highlight(source, "vue")
         )}" path="${sourceFile}" description="${encodeURIComponent(
           localMd.render(description)
