@@ -19,6 +19,16 @@
       width="60px"
     ></el-table-column>
     <el-table-column
+      prop="num"
+      label="天数"
+      show-overflow-tooltip
+    ></el-table-column>
+    <el-table-column
+      prop="age"
+      label="年纪"
+      show-overflow-tooltip
+    ></el-table-column>
+    <el-table-column
       prop="name"
       label="姓名"
       show-overflow-tooltip
@@ -37,16 +47,7 @@
       show-overflow-tooltip
       width="120px"
     ></el-table-column>
-    <el-table-column
-      prop="age"
-      label="年纪"
-      show-overflow-tooltip
-    ></el-table-column>
-    <el-table-column
-      prop="num"
-      label="天数"
-      show-overflow-tooltip
-    ></el-table-column>
+
     <el-table-column
       prop="color"
       label="颜色"
@@ -137,9 +138,9 @@ const groupByName = (arr, name) => {
 
 const mySum = (param) => {
   return mixin_tableSummary({
-    arr: [1, 5, 6],
-    rowProperty: ["age", "date"],
-    spanArr:form.sort,
+    arr: [1, 2, 3],
+    rowProperty: ["unit", "date"],
+    spanArr: form.sort,
     total: {
       index: 0,
       name: "统计",
@@ -148,7 +149,7 @@ const mySum = (param) => {
 };
 const mySpan = ({ row, column, rowIndex, columnIndex }) => {
   if (form.sort.length) {
-    if (columnIndex && columnIndex <= 3) {
+    if (columnIndex && columnIndex <= 2) {
       const _row = form.sort[rowIndex];
       const _col = _row > 0 ? 1 : 0;
       return {
@@ -162,7 +163,7 @@ const mySpan = ({ row, column, rowIndex, columnIndex }) => {
 onMounted(() => {
   ins.proxy.$http
     .post("/api/mock", {
-      "list|10": [
+      "list|5": [
         {
           id: "@natural()",
           unit: "@natural(1, 8)",
