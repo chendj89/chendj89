@@ -5,7 +5,7 @@
     <el-table-column prop="name" label="姓名" show-overflow-tooltip width="100px"></el-table-column>
     <el-table-column prop="avatar" label="头像" width="80px">
       <template slot-scope="scope">
-        <el-image style="width:30px;height:30px" :src="scope.row.avatar" fill="fill"></el-image>
+        <el-image style="width:30px;height:30px;font-size:28px;" :src="scope.row.avatar" fill="fill"></el-image>
       </template>
     </el-table-column>
     <el-table-column prop="date" label="日期" show-overflow-tooltip width="120px"></el-table-column>

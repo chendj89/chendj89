@@ -1,6 +1,8 @@
 export function post(url, params) {
   return new Promise((resolve) => {
-    resolve(Mock.mock(params));
+    setTimeout(() => {
+      resolve(Mock.mock(params));
+    }, Mock.mock({ "number|1000-2000": 1000 }).number);
   }).then((data) => {
     return {
       code: 0,
@@ -11,7 +13,9 @@ export function post(url, params) {
 }
 export function get(url, params) {
   return new Promise((resolve) => {
-    resolve(Mock.mock(params));
+    setTimeout(() => {
+      resolve(Mock.mock(params));
+    }, Mock.mock({ "number|1000-2000": 1000 }).number);
   }).then((data) => {
     return {
       code: 0,

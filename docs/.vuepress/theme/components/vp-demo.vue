@@ -74,7 +74,7 @@ const decodedDescription = computed(() =>
   decodeURIComponent(props.description || "")
 );
 const copyCode = () => {
-  console.log(decodeURIComponent(props.origin || ""));
+  decodeURIComponent(props.origin || "");
 };
 let sourceVisible = ref(false);
 function toggleSourceVisible(value) {

@@ -81,7 +81,7 @@ export function mixin_tableSummary(obj) {
                   // 或者 只统计合并列的第一项
                   // spanArr不存在时，说明没有合并单元格
                   if(obj.spanArr){
-                    if(that[obj.spanArr][index2]){
+                    if(obj.spanArr[index2]){
                       return prev + curr;
                     }else {
                       return prev
