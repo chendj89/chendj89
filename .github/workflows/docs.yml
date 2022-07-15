@@ -25,6 +25,9 @@ jobs:
           # 选择要使用的 node 版本
           node-version: '14'
 
+      - name: add Readme
+        run: npm run add
+
       # 缓存 node_modules
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -45,8 +48,7 @@ jobs:
       - name: Build VuePress site
         run: yarn docs:build
 
-      - name: add Readme
-        run: npm run add
+     
 
      
       # 查看 workflow 的文档来获取更多信息
@@ -61,7 +63,3 @@ jobs:
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Get version
-        id: get_version
-        run: echo '----123'
