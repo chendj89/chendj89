@@ -1,1 +1,2 @@
-更新：7/15/2022, 7:22:06 PM
+
+  ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chendj89&theme=gruvbox&show_icons=true)
