@@ -30,14 +30,7 @@ jobs:
           git checkout master
           git add .
           git commit -m "更新readme"
-      - name: push change
-        env:
-          GITHUB_LOGIN: chendj89
-          GITHUB_PERSONAL_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN }}
-        run: |
-          git diff
           git push origin/master master
-        
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
