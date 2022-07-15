@@ -36,7 +36,7 @@ jobs:
           GITHUB_PERSONAL_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN }}
         run: |
           git diff
-          git push origin master
+          git push origin/master master
         
 
       - name: Setup Node.js
