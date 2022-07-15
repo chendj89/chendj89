@@ -26,7 +26,11 @@ jobs:
           node-version: '14'
 
       - name: add Readme
-        run: npm run add
+        run: npm run add 
+          git config user.name chendj89
+          git config user.email chendj89@hotmail.com
+          git push origin main --force
+
 
       # 缓存 node_modules
       - name: Cache dependencies
