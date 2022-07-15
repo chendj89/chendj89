@@ -1,1 +1,2 @@
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chendj89)](https://github.com/chendj89/github-readme-stats)
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
