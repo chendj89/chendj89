@@ -20,19 +20,6 @@ jobs:
       - name: add Readme
         run: npm run add
 
-      - name: config git info
-        run: |
-          git config --global user.email "chendj89@hotmail.com"
-          git config --global user.name "chendj89"
-
-      - name: commit update readme
-        run: |
-          git checkout master
-          git diff
-          git add .
-          git commit -m "更新readme"
-          git push origin/master master
-
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
