@@ -1,15 +1,14 @@
 const fs = require("fs");
 
 function run() {
+  let content = `
+  ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chendj89&theme=gruvbox&show_icons=true)`;
+
   try {
     // "./docs/.vuepress/dist/readme.md",
-    fs.writeFileSync(
-      "./readme.md",
-      "更新：" + new Date().toLocaleString(),
-      () => {
-        console.log(`更新完成`);
-      }
-    );
+    fs.writeFileSync("./readme.md", content, () => {
+      console.log(`更新完成`);
+    });
   } catch (error) {
     console.log(error);
   }
