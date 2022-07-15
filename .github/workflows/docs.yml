@@ -17,7 +17,26 @@ jobs:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
-    
+      - name: add Readme
+        run: npm run add
+
+      - name: config git info
+        run: |
+          git config --global user.email "chendj89@hotmail.com"
+          git config --global user.name "chendj89"
+
+      - name: commit update readme
+        run: |
+          git checkout master
+          git add .
+          git commit -m "更新readme"
+      - name: push change
+        env:
+          GITHUB_LOGIN: chendj89
+          GITHUB_PERSONAL_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN }}
+        run: |
+        git push https://$GITHUB_LOGIN:$GITHUB_PERSONAL_TOKEN@github.com/$GITHUB_REPOSITORY.git
+        
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -47,8 +66,7 @@ jobs:
       - name: Build VuePress site
         run: yarn docs:build
 
-      - name: add Readme
-        run: npm run add
+    
 
      
       # 查看 workflow 的文档来获取更多信息
