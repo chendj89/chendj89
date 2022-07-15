@@ -35,6 +35,7 @@ jobs:
           GITHUB_LOGIN: chendj89
           GITHUB_PERSONAL_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN }}
         run: |
+          git diff
           git push origin master
         
 
