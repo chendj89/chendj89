@@ -35,7 +35,7 @@ jobs:
           GITHUB_LOGIN: chendj89
           GITHUB_PERSONAL_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN }}
         run: |
-        git push https://$GITHUB_LOGIN:$GITHUB_PERSONAL_TOKEN@github.com/$GITHUB_REPOSITORY.git
+        git push origin master
         
 
       - name: Setup Node.js
