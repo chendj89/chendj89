@@ -7,7 +7,7 @@
     "docs:dev": "vuepress dev docs --no-clear-screen --no-cache",
     "docs:serve": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "add": "node ./cli/index.js"
+    "add": "node cli/index.js"
   },
   "devDependencies": {
     "@vuepress/plugin-register-components": "^1.9.7",
