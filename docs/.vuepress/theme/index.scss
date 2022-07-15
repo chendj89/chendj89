@@ -1,4 +1,3 @@
-
 // css variables
 :root {
   // layouts
@@ -20,8 +19,8 @@
   --border-color-light: var(--el-border-color-lighter);
 
   --font-family: var(--el-font-family);
-  --font-family-mono: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas,
-  'Courier New', monospace;;
+  --font-family-mono: "JetBrains Mono", source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
 
   // info
   --success-color: var(--el-color-success);
@@ -149,7 +148,7 @@ h2 {
     }
   }
 }
-div[class*='language-'] > pre[class*='language-'] {
+div[class*="language-"] > pre[class*="language-"] {
   &::before {
     content: none;
   }
@@ -158,8 +157,8 @@ div[class*='language-'] > pre[class*='language-'] {
   border-right: none;
 }
 
-.el-table__body, 
-.el-table__footer, 
+.el-table__body,
+.el-table__footer,
 .el-table__header {
   margin: 0;
   th,
@@ -178,30 +177,29 @@ div[class*='language-'] > pre[class*='language-'] {
   }
 }
 .el-icon {
-    --color: inherit;
-    height: 1em;
-    width: 1em;
-    line-height: 1em;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    fill: currentColor;
-    color: var(--color);
-    font-size: inherit
+  --color: inherit;
+  height: 1em;
+  width: 1em;
+  line-height: 1em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--color);
+  font-size: inherit;
 }
 
 .el-icon.is-loading {
-    -webkit-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite
+  -webkit-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
 }
 
 .el-icon svg {
   vertical-align: middle;
-    height: 1em;
-    width: 1em
+  height: 1em;
+  width: 1em;
 }
-
 
 .el-table {
   .el-form-item {
@@ -211,14 +209,14 @@ div[class*='language-'] > pre[class*='language-'] {
     line-height: inherit;
   }
   // 表格表单校验
- .el-form-item.is-error .el-input__inner {
-  &::placeholder {
-    color:var(--el-color-danger) ;
+  .el-form-item.is-error .el-input__inner {
+    &::placeholder {
+      color: var(--el-color-danger);
+    }
   }
- }
- .el-image {
-  vertical-align: middle;
- }
+  .el-image {
+    vertical-align: middle;
+  }
 }
 
 .line-numbers-wrapper {
@@ -227,11 +225,12 @@ div[class*='language-'] > pre[class*='language-'] {
   padding-bottom: 0;
 }
 .line-numbers-mode {
-  div[class*=language-], pre[class*=language-] {
+  div[class*="language-"],
+  pre[class*="language-"] {
     padding-left: 15px;
   }
 }
-div[class*=language-].line-numbers-mode {
+div[class*="language-"].line-numbers-mode {
   padding-bottom: 0;
 }
 .vp {
@@ -248,4 +247,24 @@ div[class*=language-].line-numbers-mode {
       }
     }
   }
+}
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  display: block;
+  overflow-x: auto;
+}
+
+tr {
+  border-top: 1px solid #dfe2e5;
+}
+
+tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+td,
+th {
+  border: 1px solid #dfe2e5;
+  padding: 0.6em 1em;
 }

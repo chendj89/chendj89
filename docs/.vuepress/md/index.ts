@@ -60,7 +60,7 @@ export const mdPlugin = (md: any) => {
       const [tokens, idx] = args;
       const token = tokens[idx];
       const rawCode = wrapped(...args);
-      if (token.tag == "code" && ["js"].includes(token.info)) {
+      if (token.tag == "code" && ["js run"].includes(token.info)) {
         let comment = highlight("//结果", "js");
         return `${rawCode}<div class="language-js extra-class vp-code-container">${comment}<vp-code code="${encodeURIComponent(
           token.content
