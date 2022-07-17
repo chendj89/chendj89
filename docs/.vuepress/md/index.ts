@@ -70,6 +70,7 @@ export const mdPlugin = (md: any) => {
       }
     };
   const { fence, code_block: codeBlock } = md.renderer.rules;
+
   md.renderer.rules.fence = wrap(fence);
   md.renderer.rules.code_block = wrap(codeBlock);
 };

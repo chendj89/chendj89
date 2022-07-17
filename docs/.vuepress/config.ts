@@ -1,6 +1,7 @@
 import path from "path";
 import { defineConfig } from "vuepress/config";
 import { mdPlugin } from "./md";
+import mdLink from "./md/link";
 import Icons from "unplugin-icons/webpack";
 import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/webpack";
@@ -19,6 +20,7 @@ export default defineConfig({
     toc: { includeLevel: [1, 2, 3] },
     extendMarkdown: (md) => {
       mdPlugin(md);
+      // mdLink(md);
     },
   },
 
