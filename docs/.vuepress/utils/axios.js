@@ -1,3 +1,4 @@
+import axios from "axios";
 export function post(url, params) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -24,3 +25,5 @@ export function get(url, params) {
     };
   });
 }
+
+export { axios };

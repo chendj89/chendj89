@@ -4,6 +4,7 @@ import { mdPlugin } from "./md";
 import Icons from "unplugin-icons/webpack";
 import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/webpack";
+import { webpackPlugin } from "./plugins/word";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
@@ -14,6 +15,7 @@ export default defineConfig({
       { src: "https://unpkg.com/better-mock@0.3.4/dist/mock.browser.js" },
     ],
   ],
+
   markdown: {
     lineNumbers: false,
     toc: { includeLevel: [1, 2, 3] },
@@ -24,6 +26,10 @@ export default defineConfig({
   },
 
   configureWebpack: {
+    node: {
+      global: true,
+      process: true,
+    },
     resolve: {
       alias: {
         "@docs": path.resolve(__dirname, ".."),
@@ -36,6 +42,7 @@ export default defineConfig({
         resolvers: [IconsResolver()],
       }),
       Icons({ compiler: "vue2", autoInstall: true }),
+      webpackPlugin(),
     ],
   },
   plugins: [

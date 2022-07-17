@@ -1,4 +1,4 @@
-import { post, get } from "./utils/axios";
+import { post, get, axios } from "./utils/axios";
 import pageComponents from "@internal/page-components";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
@@ -13,6 +13,7 @@ export default ({
   siteData, // 站点元数据
   isServer, // 当前应用配置是处于 服务端渲染 或 客户端
 }) => {
+  if (typeof window !== "undefined") window.global = window;
   // ...做一些其他的应用级别的优化
   // fixed issue-1173
   for (const [name, component] of Object.entries(pageComponents)) {
@@ -22,6 +23,7 @@ export default ({
   Vue.prototype.$http = {
     post,
     get,
+    axios,
   };
   // console.log(Object.keys(Vue.options.components));
 };
