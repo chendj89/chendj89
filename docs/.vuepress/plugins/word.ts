@@ -2,7 +2,6 @@ import { createUnplugin } from "unplugin";
 import http from "http";
 import fs from "fs";
 import path from "path";
-import cheerio from "cheerio";
 function loadPage(word: string, opts: any) {
   return new Promise(function (resolve, reject) {
     http
@@ -12,7 +11,7 @@ function loadPage(word: string, opts: any) {
           html += d.toString();
         });
         res.on("end", function () {
-          let $ = cheerio.load(html);
+          let $ = opts.cheerio.load(html);
           let $pronounce = $(".wordbook-js .pronounce");
           // 发音方式
           let $lang = $pronounce.eq(opts.type - 1);
@@ -56,6 +55,7 @@ interface IOption {
    * 倍速
    */
   playbackRate: number;
+  cheerio: any;
 }
 export const unplugin = createUnplugin(
   (options: Partial<IOption> | undefined) => {
@@ -65,7 +65,7 @@ export const unplugin = createUnplugin(
         return id.endsWith(".md");
       },
       async transform(code) {
-        console.log('插件');
+        console.log("插件");
         let opts = Object.assign(
           {
             // 1 英式，2 美式

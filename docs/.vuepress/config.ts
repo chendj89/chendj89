@@ -5,6 +5,7 @@ import Icons from "unplugin-icons/webpack";
 import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/webpack";
 import { webpackPlugin } from "./plugins/word";
+import cheerio from "cheerio";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
@@ -42,7 +43,8 @@ export default defineConfig({
         resolvers: [IconsResolver()],
       }),
       Icons({ compiler: "vue2", autoInstall: true }),
-    ].filter(Boolean),
+      webpackPlugin({ cheerio }),
+    ],
   },
   plugins: [
     [
