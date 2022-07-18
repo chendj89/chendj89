@@ -14,8 +14,9 @@ export default ({
   siteData, // 站点元数据
   isServer, // 当前应用配置是处于 服务端渲染 或 客户端
 }) => {
+  console.log(words);
   // ...做一些其他的应用级别的优化
-  siteData.themeConfig.words=words||{};
+  siteData.themeConfig.words = words || {};
   // fixed issue-1173
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component);
