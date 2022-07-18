@@ -2,7 +2,7 @@ import { createUnplugin } from "unplugin";
 import http from "http";
 import fs from "fs";
 import path from "path";
-import createHtmlDom from "htmldom/htmldom.umd.js";
+import cheerio from "cheerio"
 function loadPage(word: string, opts: any) {
   return new Promise(function (resolve, reject) {
     http
@@ -14,12 +14,12 @@ function loadPage(word: string, opts: any) {
           html += d.toString();
         });
         res.on("end", function () {
-          let $ = createHtmlDom(html);
+          let $ = cheerio.load(html);
           let $pronounce = $(".wordbook-js .pronounce");
           // 发音方式
           let $lang = $pronounce.eq(opts.type - 1);
           // 发音方式
-          let lang = $lang[0].children[0].data;
+          let lang = $lang.clone().children().remove().end().text();
           // 英标
           let soundmark = $lang.find(".phonetic").html();
           // 中文意思
@@ -64,7 +64,7 @@ export const unplugin = createUnplugin(
     return {
       name: "word",
       transformInclude(id) {
-        return id.endsWith(".md");
+        return id.endsWith("掘金.md");
       },
       async transform(code) {
         let opts = Object.assign(

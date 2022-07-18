@@ -28,6 +28,7 @@
     "@vueuse/core": "^8.9.1",
     "axios": "^0.27.2",
     "better-mock": "^0.3.4",
+    "cheerio": "^1.0.0-rc.12",
     "core-js": "2.6.12",
     "css-loader": "^6.7.1",
     "element-ui": "^2.15.9",
