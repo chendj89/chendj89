@@ -65,6 +65,7 @@ export const unplugin = createUnplugin(
         return id.endsWith(".md");
       },
       async transform(code) {
+        console.log('插件');
         let opts = Object.assign(
           {
             // 1 英式，2 美式
