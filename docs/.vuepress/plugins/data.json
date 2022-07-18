@@ -4,7 +4,23 @@
     "soundmark": "[mæp]",
     "src": "https://dict.youdao.com/dictvoice?audio=map&type=1",
     "volume": 1,
-    "desc": "n. 地图；分布图；（基因）图谱，染色体图；天体图；映射；<非正式>脸，面孔",
+    "desc": "n. 地图；分布图；（基因）图谱，染色体图；天体图；映射；<非正式>脸��面孔",
+    "playbackRate": 1.5
+  },
+  "push": {
+    "name": "push",
+    "soundmark": "[pʊʃ]",
+    "src": "https://dict.youdao.com/dictvoice?audio=push&type=1",
+    "volume": 1,
+    "desc": "v. 推，按；（尤指用力或努力）移动身体（或身体的一部分）；挤，推搡；敦促，强迫；努力争取，力劝；（军队）挺进，奋力前行；<非正式>推销，推广；贩卖（毒品）；坚持不懈地做；推进，推行；推动，促使（达到某程度或状态）；再三强调；超越（极限）；<非正式>接近（某年龄或数字）（be pushing）；赶走；推击（球）；使（栈）准备接收顶层数据；把（数据）移至栈的顶部；对（底片）作增感处理",
+    "playbackRate": 1.5
+  },
+  "join": {
+    "name": "join",
+    "soundmark": "[dʒɔɪn]",
+    "src": "https://dict.youdao.com/dictvoice?audio=join&type=1",
+    "volume": 1,
+    "desc": "v. 成为……的一员，参加；连接，接合；联合，汇合；上（火车、飞机等）；和……作伴，随同",
     "playbackRate": 1.5
   },
   "filter": {
