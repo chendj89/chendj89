@@ -2,6 +2,7 @@ const fs = require("fs");
 
 function run() {
   let content = `
+  更新时间：${new Date().toLocaleString()}
   ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chendj89&theme=gruvbox&show_icons=true)`;
 
   try {
