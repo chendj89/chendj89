@@ -42,7 +42,9 @@ export default defineConfig({
         resolvers: [IconsResolver()],
       }),
       Icons({ compiler: "vue2", autoInstall: true }),
-      webpackPlugin({ reload: true, playbackRate: 1.5 }),
+      process.env.NODE_ENV !== "production"
+        ? webpackPlugin({ reload: true, playbackRate: 1.5 })
+        : false,
     ],
   },
   plugins: [

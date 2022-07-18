@@ -2,13 +2,11 @@ import { createUnplugin } from "unplugin";
 import http from "http";
 import fs from "fs";
 import path from "path";
-import cheerio from "cheerio"
+import cheerio from "cheerio";
 function loadPage(word: string, opts: any) {
   return new Promise(function (resolve, reject) {
     http
       .get(`http://dict.youdao.com/w/eng/${word}`, function (res) {
-        console.log(word);
-
         var html = "";
         res.on("data", function (d) {
           html += d.toString();
@@ -30,6 +28,7 @@ function loadPage(word: string, opts: any) {
             src: `https://dict.youdao.com/dictvoice?audio=${word}&type=${opts.type}`,
             volume: opts.volume,
             desc: desc,
+            lang: lang,
             playbackRate: opts.playbackRate,
           });
         });
@@ -58,13 +57,12 @@ interface IOption {
    */
   playbackRate: number;
 }
-
 export const unplugin = createUnplugin(
   (options: Partial<IOption> | undefined) => {
     return {
       name: "word",
       transformInclude(id) {
-        return id.endsWith("掘金.md");
+        return id.endsWith(".md");
       },
       async transform(code) {
         let opts = Object.assign(
@@ -94,17 +92,18 @@ export const unplugin = createUnplugin(
             wordList.push(result[1]);
           }
         });
-        if(opts.reload){
-          data={};
-        }
-        for (let i = 0; i < wordList.length; i++) {
-          let word = wordList[i];
-          if (!data[word]) {
-            let msg = await loadPage(word, opts);
-            data[word]=msg;
+        if (wordList.length) {
+          for (let i = 0; i < wordList.length; i++) {
+            let word = wordList[i];
+            if (!data[word]) {
+              let msg = await loadPage(word, opts);
+              data[word] = msg;
+            }
           }
+          fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf-8");
+          console.log(wordList);
         }
-        fs.writeFileSync(file,JSON.stringify(data,null,2),"utf-8");
+
         return code;
       },
     };
