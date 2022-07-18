@@ -16,18 +16,6 @@ jobs:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
           fetch-depth: 0
 
-      - name: add Readme
-        run: npm run add
-
-      - name: Commit and push if needed
-        run: |-
-          git diff
-          git config --global user.email "Robot89@example.com"
-          git config --global user.name "机器人89号"
-          git add -A
-          git commit -m "update readme" || exit 0
-          git push
-
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -49,6 +37,18 @@ jobs:
       - name: Install dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
+
+      - name: add Readme
+        run: npm run add
+
+      - name: Commit and push if needed
+        run: |-
+          git diff
+          git config --global user.email "Robot89@example.com"
+          git config --global user.name "机器人89号"
+          git add -A
+          git commit -m "update readme" || exit 0
+          git push
 
       # 运行构建脚本
       - name: Build VuePress site
