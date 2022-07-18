@@ -4,6 +4,7 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "./theme/styles/app.scss";
 import "./theme/index.scss";
+import words from "./plugins/data.json";
 
 // 使用异步函数也是可以的
 export default ({
@@ -13,8 +14,8 @@ export default ({
   siteData, // 站点元数据
   isServer, // 当前应用配置是处于 服务端渲染 或 客户端
 }) => {
-  if (typeof window !== "undefined") window.global = window;
   // ...做一些其他的应用级别的优化
+  siteData.themeConfig.words=words||{};
   // fixed issue-1173
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component);

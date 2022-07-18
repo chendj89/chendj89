@@ -268,3 +268,37 @@ th {
   border: 1px solid #dfe2e5;
   padding: 0.6em 1em;
 }
+.vp {
+  &-word {
+    &-content {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+    }
+    &-soundmark {
+      display: inline-block;
+      font-size: 14px;
+      color: var(--text-color-light);
+      font-weight: normal;
+    }
+    &-audio {
+      display: none;
+    }
+    &-icon {
+      font-size: 20px;
+      color: var(--text-color-light);
+      cursor: pointer;
+      // animation: flash .75s infinite;
+      // animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+  }
+}
+
+@keyframes flash {
+  0% {
+    color: var(--text-color-light);
+  }
+  100% {
+    color: var(--text-color-lighter);
+  }
+}

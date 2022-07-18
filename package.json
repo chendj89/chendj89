@@ -7,8 +7,7 @@
     "docs:dev": "vuepress dev docs --no-clear-screen --no-cache",
     "docs:serve": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "add": "node cli/index.js",
-    "en": "node cli/en.js"
+    "add": "node cli/index.js"
   },
   "devDependencies": {
     "@vuepress/plugin-register-components": "^1.9.7",
@@ -18,6 +17,7 @@
     "@element-plus/icons-vue": "^2.0.6",
     "@iconify-json/ci": "^1.1.2",
     "@iconify-json/ep": "^1.1.6",
+    "@iconify-json/ic": "^1.1.7",
     "@iconify-json/ph": "^1.1.2",
     "@iconify-json/ri": "^1.1.3",
     "@types/escape-html": "^1.0.2",

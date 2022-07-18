@@ -31,53 +31,71 @@ export const unplugin = createUnplugin((options: any) => {
       return id.endsWith("掘金.md");
     },
     async transform(code) {
-      let words = code.match(/<vp-word>(.+)<\/vp-word>/gi);
-      let file = path.join(__dirname, "./data.json");
-      if (words) {
-        let data: any = fs.readFileSync(file, "utf-8");
-        if (data) {
-          try {
-            data = JSON.parse(data);
-          } catch (error) {
-            data = {};
-          }
-        } else {
-          data = {};
-        }
-        words.forEach(async (item) => {
-          let itemResult = item.match(/<vp-word>(.+)<\/vp-word>/);
-          let word = (itemResult && itemResult[1]) || null;
-          let result: any = null;
-
-          if (word) {
-            if (data[word]) {
-              result = data[word];
-            } else {
-              data[word] = {};
-              result = await loadPage(
-                `http://dict.youdao.com/w/eng/${word}`
-              ).then(function (d) {
-                let dom = new JSDOM(d as string);
-                let wordbook: Element = dom.window.document.querySelector(
-                  ".wordbook-js"
-                ) as Element;
-                let soundmark =
-                  wordbook?.querySelectorAll(".phonetic")[1].innerHTML;
-                let src = `https://dict.youdao.com/dictvoice?audio=${word}&type=2`;
-                return {
-                  name: word,
-                  soundmark: soundmark,
-                  src: src,
-                };
-              });
-              console.log(result);
-              data[word] = result;
-              fs.writeFileSync(file, JSON.stringify(data), "utf-8");
+      let opts = Object.assign(
+        {
+          // 1 英式，2 美式
+          type: 1,
+          // 音量
+          volume: 1,
+          // 倍速
+          playbackRate: 1,
+        },
+        options
+      );
+      // 是否重新抓取数据
+      if (options && options.reload) {
+        // 获取所有单词
+        let words = code.match(/<vp-word>(.+)<\/vp-word>/gi);
+        // 读取单词表
+        let file = path.join(__dirname, "./data.json");
+        if (words) {
+          let data: any = fs.readFileSync(file, "utf-8");
+          if (data) {
+            try {
+              data = JSON.parse(data);
+            } catch (error) {
+              data = {};
             }
           } else {
+            data = {};
           }
-        });
+          words.forEach(async (item) => {
+            let itemResult = item.match(/<vp-word>(.+)<\/vp-word>/);
+            let word = (itemResult && itemResult[1]) || null;
+            let result: any = null;
+            if (word) {
+              if (data[word]) {
+                result = data[word];
+              } else {
+                data[word] = {};
+                result = await loadPage(
+                  `http://dict.youdao.com/w/eng/${word}`
+                ).then(function (d) {
+                  let dom = new JSDOM(d as string);
+                  let wordbook: Element = dom.window.document.querySelector(
+                    ".wordbook-js"
+                  ) as Element;
+                  let soundmark =
+                    wordbook?.querySelectorAll(".phonetic")[opts.type - 1]
+                      .innerHTML;
+                  let src = `https://dict.youdao.com/dictvoice?audio=${word}&type=${opts.type}`;
+                  return {
+                    name: word,
+                    soundmark: soundmark,
+                    src: src,
+                    volume: opts.volume,
+                    playbackRate: opts.playbackRate,
+                  };
+                });
+                data[word] = result;
+                fs.writeFileSync(file, JSON.stringify(data), "utf-8");
+              }
+            } else {
+            }
+          });
+        }
       }
+
       return code;
     },
   };
