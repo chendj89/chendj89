@@ -2,6 +2,7 @@ import { createUnplugin } from "unplugin";
 import http from "http";
 import fs from "fs";
 import path from "path";
+import { load } from "cheerio";
 function loadPage(word: string, opts: any) {
   return new Promise(function (resolve, reject) {
     http
@@ -11,7 +12,7 @@ function loadPage(word: string, opts: any) {
           html += d.toString();
         });
         res.on("end", function () {
-          let $ = opts.cheerio.load(html);
+          let $ = load(html);
           let $pronounce = $(".wordbook-js .pronounce");
           // 发音方式
           let $lang = $pronounce.eq(opts.type - 1);
