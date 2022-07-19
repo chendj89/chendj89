@@ -3,7 +3,7 @@ const fs = require("fs");
 function run() {
   let date = new Date();
   date.setHours(date.getHours() + 8);
-  let updateTime= date.toLocaleString();
+  let updateTime= date.toLocaleTimeString("en-GB");
   let content = `
   更新时间：${updateTime}\n\t
   ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=chendj89&theme=gruvbox&show_icons=true)`;
