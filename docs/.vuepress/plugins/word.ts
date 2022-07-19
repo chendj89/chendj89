@@ -103,6 +103,7 @@ export const unplugin = createUnplugin(
           }
           fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf-8");
           console.log(wordList);
+          
         }
 
         return code;
