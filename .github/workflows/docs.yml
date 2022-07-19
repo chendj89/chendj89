@@ -22,7 +22,6 @@ jobs:
 
       - name: Commit and push if needed
         run: |-
-          git diff
           git config --global user.email "Robot89@example.com"
           git config --global user.name "机器人89号"
           git add -A
