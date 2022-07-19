@@ -6,12 +6,14 @@
       <audio ref="audio" class="vp-word-audio" controls>
         <source :src="word.src" />
       </audio>
+      <CarbonMicrophoneFilled class="vp-word-icon" @click.native="play"></CarbonMicrophoneFilled>
     </code>
   </div>
 </template>
 
 <script setup>
 // import http from "http";
+import CarbonMicrophoneFilled from '~icons/carbon/microphone-filled'
 import { ref, reactive, computed, onMounted, getCurrentInstance } from "vue";
 const ins = getCurrentInstance();
 const audio = ref(null);
@@ -38,7 +40,6 @@ onMounted(() => {
   }
 });
 const play = () => {
-  console.log(audio.value.playbackRate  );
   if (audio.value.paused) {
     audio.value.play();
   }
