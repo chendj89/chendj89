@@ -6,14 +6,13 @@
       <audio ref="audio" class="vp-word-audio" controls>
         <source :src="word.src" />
       </audio>
-      <IcSharpKeyboardVoice class="vp-word-icon" @click.native="play"></IcSharpKeyboardVoice>
+      <div class="vp-word-icon" @click.native="play">play</div>
     </code>
   </div>
 </template>
 
 <script setup>
 // import http from "http";
-import IcSharpKeyboardVoice from "~icons/ic/sharp-keyboard-voice";
 import { ref, reactive, computed, onMounted, getCurrentInstance } from "vue";
 const ins = getCurrentInstance();
 const audio = ref(null);
