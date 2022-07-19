@@ -6,12 +6,13 @@
       <audio ref="audio" class="vp-word-audio" controls>
         <source :src="word.src" />
       </audio>
-      <div class="vp-word-icon" @click.native="play">play</div>
+      <EmojioneMonotoneStudioMicrophone class="vp-word-icon" @click.native="play"></EmojioneMonotoneStudioMicrophone>
     </code>
   </div>
 </template>
 
 <script setup>
+import EmojioneMonotoneStudioMicrophone from '~icons/emojione-monotone/studio-microphone'
 // import http from "http";
 import { ref, reactive, computed, onMounted, getCurrentInstance } from "vue";
 const ins = getCurrentInstance();

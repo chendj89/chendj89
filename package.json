@@ -16,6 +16,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
     "@iconify-json/ci": "^1.1.2",
+    "@iconify-json/emojione-monotone": "^1.1.2",
     "@iconify-json/ep": "^1.1.6",
     "@iconify-json/ph": "^1.1.2",
     "@iconify-json/ri": "^1.1.3",
