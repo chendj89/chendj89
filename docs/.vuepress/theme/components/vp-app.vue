@@ -6,10 +6,11 @@
       <vp-content class="has-sidebar"></vp-content>
     </template>
     <template v-else>
-      <div style="padding-top: var(--nav-height);">
+      <div style="padding-top: var(--nav-height)">
         <Content></Content>
       </div>
     </template>
+    <vp-tool></vp-tool>
   </div>
 </template>
 
@@ -17,9 +18,8 @@
 import { ref, computed, getCurrentInstance, onMounted } from "vue";
 let ins = getCurrentInstance();
 let showSlideBar = computed(() => {
-  return ins.proxy.$route.fullPath !== "/"
+  return ins.proxy.$route.fullPath !== "/";
 });
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
