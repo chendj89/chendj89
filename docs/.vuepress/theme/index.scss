@@ -270,14 +270,24 @@ th {
 }
 .vp {
   &-word {
+    display: inline-flex;
+    align-items: center;
     &-content {
       display: inline-flex;
       align-items: center;
       height: 30px;
+      margin-left: 10px;
+      &.active {
+        path {
+          &:nth-child(2) {
+            animation: flash 1.5s infinite both;
+          }
+        }
+      }
     }
     &-soundmark {
       display: inline-block;
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text-color-light);
       font-weight: normal;
     }
@@ -285,20 +295,23 @@ th {
       display: none;
     }
     &-icon {
-      font-size: 20px;
+      font-size: 16px;
+      margin-left: 3px;
       color: var(--text-color-light);
       cursor: pointer;
-      // animation: flash .75s infinite;
-      // animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
     }
   }
 }
 
 @keyframes flash {
-  0% {
-    color: var(--text-color-light);
+  0%,
+  100%,
+  50% {
+    opacity: 1;
   }
-  100% {
-    color: var(--text-color-lighter);
+
+  25%,
+  75% {
+    opacity: 0;
   }
 }
