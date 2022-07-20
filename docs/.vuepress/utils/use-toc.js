@@ -26,7 +26,7 @@ export function groupHeaders(headers) {
 
 export function mapHeaders(headers) {
   return headers.map((header) => ({
-    text: header.title,
+    text: header.title || header.slug,
     link: `#${header.slug}`,
     children: header.children ? mapHeaders(header.children) : undefined,
   }));

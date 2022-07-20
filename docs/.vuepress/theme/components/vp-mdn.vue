@@ -1,15 +1,17 @@
 <template>
-  <a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object">
-    <slot></slot>
-    <LogosMdn></LogosMdn>
+  <a target="_blank" :href="href">
+    <span style="margin-right: 10px"><slot></slot></span>
+    <MyMdn></MyMdn>
   </a>
 </template>
 
 <script setup>
-import LogosMdn from '~icons/logos/mdn'
+import MyMdn from "~icons/my-icons/mdn";
 import { ref, defineProps } from "vue";
-const props = defineProps(["size"]);
-const style = ref({
-  fontSize: props.size ? props.size + "px" : "16px",
-});
+const props = defineProps(["size", "href"]);
+const href = ref(
+  props.href
+    ? props.href
+    : "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript"
+);
 </script>

@@ -23,6 +23,7 @@
 import DashiconsTranslation from "~icons/dashicons/translation";
 import SimpleIconsBaidu from "~icons/simple-icons/baidu";
 import LogosCodepenIcon from "~icons/logos/codepen-icon";
+import MyMdn from "~icons/my-icons/mdn";
 import LogosVueuse from "~icons/logos/vueuse";
 import { reactive,watch } from "vue";
 
@@ -44,6 +45,12 @@ const menu = reactive({
       com: SimpleIconsBaidu,
       name: "baidu",
       link: "https://www.baidu.com/",
+      theme: "#2932e1",
+    },
+    {
+      com: MyMdn,
+      name: "mdn",
+      link: "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
       theme: "#2932e1",
     },
   ],

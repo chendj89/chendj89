@@ -1,4 +1,5 @@
 import path from "path";
+import fs from "fs";
 import { defineConfig } from "vuepress/config";
 import { mdPlugin } from "./md";
 import Icons from "unplugin-icons/webpack";
@@ -41,7 +42,17 @@ export default defineConfig({
         dts: true,
         resolvers: [IconsResolver()],
       }),
-      Icons({ compiler: "vue2", autoInstall: true }),
+      Icons({
+        compiler: "vue2",
+        autoInstall: true,
+        customCollections: {
+          "my-icons": {
+            mdn: () => {
+              return fs.readFileSync(path.join(__dirname,"./svg/mdn.svg"),"utf-8")
+            }
+          },
+        },
+      }),
       webpackPlugin(),
     ],
     module: {
