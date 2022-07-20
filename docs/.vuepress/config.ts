@@ -10,7 +10,7 @@ export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
   head: [
-    ["link", { rel: "icon", href: "/assets/onepiece.jpg" }],
+    ["link", { rel: "icon", href: "/assets/xiaochou.jpg" }],
     [
       "script",
       { src: "https://unpkg.com/better-mock@0.3.4/dist/mock.browser.js" },
@@ -25,7 +25,6 @@ export default defineConfig({
       // mdLink(md);
     },
   },
-
   configureWebpack: {
     node: {
       global: true,
@@ -48,8 +47,11 @@ export default defineConfig({
         customCollections: {
           "my-icons": {
             mdn: () => {
-              return fs.readFileSync(path.join(__dirname,"./svg/mdn.svg"),"utf-8")
-            }
+              return fs.readFileSync(
+                path.join(__dirname, "./svg/mdn.svg"),
+                "utf-8"
+              );
+            },
           },
         },
       }),

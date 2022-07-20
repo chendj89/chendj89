@@ -1,5 +1,5 @@
 <template>
-  <div class="vp-tool">
+  <div class="vp-tool" :class="{ active: show }">
     <div class="vp-tool-content">
       <a
         class="vp-tool-btn"
@@ -10,7 +10,7 @@
       >
         <component
           class="vp-tool-icon"
-          :style="{ color: item.theme }"
+          :style="{ color: item.theme || null }"
           :is="item.com"
         ></component>
       </a>
@@ -19,13 +19,24 @@
 </template>
 
 <script setup>
+import { reactive, watch, ref } from "vue";
+import { useLocalStorage, useStorage, useEventListener } from "@vueuse/core";
 import DashiconsTranslation from "~icons/dashicons/translation";
 import SimpleIconsBaidu from "~icons/simple-icons/baidu";
 import LogosCodepenIcon from "~icons/logos/codepen-icon";
 import MyMdn from "~icons/my-icons/mdn";
 import LogosVueuse from "~icons/logos/vueuse";
-import { reactive, watch } from "vue";
+import LogosElement from "~icons/logos/element";
+import LogosVue from "~icons/logos/vue";
 
+let show = useLocalStorage("vp-tool", false);
+
+useEventListener(document, "keydown", (e) => {
+  var keyCode = e.key || e.code;
+  if (e.altKey && keyCode == 1) {
+    show.value = !show.value;
+  }
+});
 const menu = reactive({
   list: [
     {
@@ -52,6 +63,18 @@ const menu = reactive({
       link: "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
       theme: "#2932e1",
     },
+    {
+      com: LogosElement,
+      name: "饿了么",
+      link: "https://element.eleme.cn/#/zh-CN/component/installation",
+      theme: "",
+    },
+    {
+      com: LogosVue,
+      name: "vue3",
+      link: "https://staging-cn.vuejs.org/",
+      theme: "",
+    },
   ],
 });
 </script>
@@ -59,6 +82,7 @@ const menu = reactive({
 <style lang="scss" scoped>
 $shadow-opacity: 0.3;
 $tl: #329672;
+
 .vp {
   &-tool {
     position: fixed;
@@ -67,25 +91,33 @@ $tl: #329672;
     width: 100%;
     z-index: 999;
     text-align: center;
+    transition: all 0.25s;
+    transform: translateY(calc(100% + 10px));
+
+    &.active {
+      transform: translateY(0);
+    }
+
     &-content {
       margin: 0 auto;
-      background: #fff;
-      border-radius: 8px;
-      font-size: 20px;
+      font-size: 16px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px;
-      box-shadow: var(--el-box-shadow-lighter);
-
+      padding: 10px;
       border-radius: 6px;
       background: #fff;
       box-shadow: 0 4px 12px -1px rgb(18 22 33 / 10%);
     }
+
     &-btn {
-      margin: 0 15px;
+      display: inline-flex;
+      margin: 0 10px;
       cursor: pointer;
+      align-items: center;
+      justify-content: center;
     }
+
     &-icon {
     }
   }
