@@ -19,13 +19,12 @@
 </template>
 
 <script setup>
-
 import DashiconsTranslation from "~icons/dashicons/translation";
 import SimpleIconsBaidu from "~icons/simple-icons/baidu";
 import LogosCodepenIcon from "~icons/logos/codepen-icon";
 import MyMdn from "~icons/my-icons/mdn";
 import LogosVueuse from "~icons/logos/vueuse";
-import { reactive,watch } from "vue";
+import { reactive, watch } from "vue";
 
 const menu = reactive({
   list: [
@@ -55,7 +54,6 @@ const menu = reactive({
     },
   ],
 });
-
 </script>
 
 <style lang="scss" scoped>
@@ -73,12 +71,16 @@ $tl: #329672;
       margin: 0 auto;
       background: #fff;
       border-radius: 8px;
-      font-size: 24px;
+      font-size: 20px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 15px;
       box-shadow: var(--el-box-shadow-lighter);
+
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 4px 12px -1px rgb(18 22 33 / 10%);
     }
     &-btn {
       margin: 0 15px;
