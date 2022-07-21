@@ -66,7 +66,7 @@ export const mdPlugin = (md: any) => {
 
       if (infoArr.includes("export")) {
         exportList.push({
-          name: infoArr.at(-1),
+          name: infoArr[2],
           func: token.content.replace(/export/gi, "").trim(),
         });
       }
