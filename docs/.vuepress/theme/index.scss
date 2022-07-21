@@ -300,6 +300,12 @@ th {
       color: var(--text-color-light);
       cursor: pointer;
     }
+    &-name {
+      font-size: 18px;
+      color: var(--text-color-light);
+      font-weight: normal;
+      margin-left: 10px;
+    }
   }
 }
 

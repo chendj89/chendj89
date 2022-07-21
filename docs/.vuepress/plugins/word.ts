@@ -63,7 +63,7 @@ export const unplugin = createUnplugin(
     return {
       name: "word",
       transformInclude(id) {
-        return id.endsWith(".md");
+        return id.endsWith("掘金.md");
       },
       async transform(code) {
         let opts = Object.assign(

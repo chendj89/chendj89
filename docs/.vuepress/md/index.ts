@@ -9,6 +9,7 @@ import { highlight } from "./highlight";
 import type Token from "markdown-it/lib/token";
 import type Renderer from "markdown-it/lib/renderer";
 const localMd = MarkdownIt();
+
 interface ContainerOpts {
   marker?: string | undefined;
   validate?(params: string): boolean;
@@ -21,6 +22,7 @@ interface ContainerOpts {
   ): string;
 }
 export const mdPlugin = (md: any) => {
+  let exportHast: any[] = [];
   md.use(mdContainer, "demo", {
     validate(params) {
       return !!params.trim().match(/^demo\s*(.*)$/);
@@ -60,11 +62,17 @@ export const mdPlugin = (md: any) => {
       const [tokens, idx] = args;
       const token = tokens[idx];
       const rawCode = wrapped(...args);
+      if (["js export"].includes(token.info)) {
+        console.log(token);
+        exportHast.push(token.content.replace(/export/gi, ""));
+      }
       if (token.tag == "code" && ["js run"].includes(token.info)) {
         let comment = highlight("//结果", "js");
-        return `${rawCode}<div class="language-js extra-class vp-code-container">${comment}<vp-code code="${encodeURIComponent(
+        return `${rawCode}<div class="language-js extra-class vp-code-container">${comment}<vp-code cache="${encodeURIComponent(
+          JSON.stringify(exportHast)
+        )}" code="${encodeURIComponent(token.content)}">${
           token.content
-        )}">${token.content}</vp-code></div>`;
+        }</vp-code></div>`;
       } else {
         return rawCode;
       }

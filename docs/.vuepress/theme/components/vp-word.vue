@@ -1,6 +1,9 @@
 <template>
   <div class="vp-word">
     <slot></slot>
+    <div class="vp-word-name" v-if="props.name !== undefined">
+      {{ props.name }}
+    </div>
     <code class="vp-word-content" :class="{ active: word.active }">
       <div class="vp-word-soundmark">{{ word.soundmark }}</div>
       <audio ref="audio" class="vp-word-audio" controls>
@@ -17,9 +20,9 @@
 <script setup>
 // import http from "http";
 import CarbonMicrophoneFilled from "~icons/carbon/microphone-filled";
-
 import { ref, reactive, computed, onMounted, getCurrentInstance } from "vue";
 import { useEventListener } from "@vueuse/core";
+const props = defineProps(["name"]);
 const ins = getCurrentInstance();
 const audio = ref(null);
 let word = reactive({
