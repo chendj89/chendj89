@@ -11,17 +11,17 @@ const props = defineProps({
   cache: String,
 });
 const decodedCode = computed(() => decodeURIComponent(props.code || ""));
-const decodedCache = computed(() => decodeURIComponent(props.cache || ""));
+const decodedCache = computed(() => decodeURIComponent(props.cache || "[]"));
+const cacheArr = JSON.parse(decodedCache.value);
+
 let runCode = computed(() => {
-  let str=decodedCode.value;
-  if (decodedCode.value) {
-    if (decodedCache.value) {
-      str = JSON.parse(decodedCache.value).join("") + "\n" + decodedCode.value;
+  let evalStr = decodedCode.value;
+  cacheArr.map((item) => {
+    if (decodedCode.value.includes(item.name)) {
+      evalStr = item.func + "\n" + evalStr;
     }
-    console.log(str);
-    return eval(str);
-  }
-  return "";
+  });
+  return eval(evalStr);
 });
 </script>
 

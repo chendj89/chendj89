@@ -22,7 +22,7 @@ interface ContainerOpts {
   ): string;
 }
 export const mdPlugin = (md: any) => {
-  let exportHast: any[] = [];
+  let exportList: any[] = [];
   md.use(mdContainer, "demo", {
     validate(params) {
       return !!params.trim().match(/^demo\s*(.*)$/);
@@ -62,17 +62,41 @@ export const mdPlugin = (md: any) => {
       const [tokens, idx] = args;
       const token = tokens[idx];
       const rawCode = wrapped(...args);
-      if (["js export"].includes(token.info)) {
-        console.log(token);
-        exportHast.push(token.content.replace(/export/gi, ""));
+      let infoArr: string[] = token.info.split(" ");
+
+      if (infoArr.includes("export")) {
+        exportList.push({
+          name: infoArr.at(-1),
+          func: token.content.replace(/export/gi, "").trim(),
+        });
       }
-      if (token.tag == "code" && ["js run"].includes(token.info)) {
-        let comment = highlight("//结果", "js");
-        return `${rawCode}<div class="language-js extra-class vp-code-container">${comment}<vp-code cache="${encodeURIComponent(
-          JSON.stringify(exportHast)
-        )}" code="${encodeURIComponent(token.content)}">${
-          token.content
-        }</vp-code></div>`;
+      if (infoArr.includes("js") || infoArr.includes("ts")) {
+        let importStr = "";
+        let htmlCode = "";
+        exportList.map((item) => {
+          if (token.content.includes(item.name)) {
+            importStr += `// import { ${item.name} } from ${item.name};\n`;
+          }
+        });
+        htmlCode = highlight(importStr + token.content + "//结果", "js");
+        let arrMap = new Map();
+        exportList = exportList.filter((item) => {
+          return !arrMap.has(item.name) && arrMap.set(item.name, item);
+        });
+        // 缓存数据
+        let cache = encodeURIComponent(JSON.stringify(exportList));
+        // 代码
+        let code = encodeURIComponent(token.content);
+        if (infoArr.includes("run")) {
+          return `
+          <div class="language-${infoArr[0]} run extra-class">
+            ${htmlCode}
+            <vp-code cache="${cache}" code="${code}">${token.content}</vp-code>
+          </div>
+          `;
+        } else {
+          return rawCode;
+        }
       } else {
         return rawCode;
       }
