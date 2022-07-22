@@ -63,7 +63,7 @@ export const unplugin = createUnplugin(
     return {
       name: "word",
       transformInclude(id) {
-        return id.endsWith("掘金.md");
+        return id.endsWith(".md");
       },
       async transform(code) {
         let opts = Object.assign(
@@ -78,7 +78,7 @@ export const unplugin = createUnplugin(
           options
         );
         // 获取所有单词
-        let words = code.match(/<vp-word>(.+)<\/vp-word>/gi);
+        let words = code.match(/<vp-word[^>]*?>([\s\S]*?)<\/vp-word>/gi);
         // 读取单词表
         let file = path.join(__dirname, "./data.json");
         // 数据
@@ -88,9 +88,11 @@ export const unplugin = createUnplugin(
         // 收集所有单词
         let wordList: any[] = [];
         words?.map((item) => {
-          let result = item.match(/<vp-word>(.+)<\/vp-word>/);
-          if (result) {
-            wordList.push(result[1]);
+          if (item) {
+            let result = item.match(/<vp-word[^>]*?>([\s\S]*?)<\/vp-word>/);
+            if (result) {
+              wordList.push(result[1]);
+            }
           }
         });
         if (wordList.length) {
@@ -102,8 +104,6 @@ export const unplugin = createUnplugin(
             }
           }
           fs.writeFileSync(file, JSON.stringify(data, null, 2), "utf-8");
-          console.log(wordList);
-          
         }
 
         return code;
