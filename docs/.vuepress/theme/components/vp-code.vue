@@ -21,6 +21,8 @@ let runCode = computed(() => {
       evalStr = item.func + "\n" + evalStr;
     }
   });
+  console.log(cacheArr);
+  console.log(evalStr);
   return eval(evalStr);
 });
 </script>

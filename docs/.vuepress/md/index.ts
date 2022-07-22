@@ -6,6 +6,7 @@ import fs from "fs";
 import MarkdownIt from "markdown-it";
 import mdContainer from "markdown-it-container";
 import { highlight } from "./highlight";
+import { getFileName, getCodeName, getCodeSuffix } from "../tool/file.js";
 import type Token from "markdown-it/lib/token";
 import type Renderer from "markdown-it/lib/renderer";
 const localMd = MarkdownIt();
@@ -64,12 +65,28 @@ export const mdPlugin = (md: any) => {
       const rawCode = wrapped(...args);
       let infoArr: string[] = token.info.split(" ");
 
+      // 如果是导入代码块
+      if (token.src) {
+        let fileName = getFileName(token.src);
+        let codeName = getCodeName(token.content);
+        if (codeName) {
+          exportList.push({
+            name: codeName,
+            func: token.content.replace(/export/gi, "").trim(),
+            fileName: fileName,
+          });
+          let suffix = getCodeSuffix(token.src);
+          infoArr.push(suffix);
+        }
+      }
+
       if (infoArr.includes("export")) {
         exportList.push({
           name: infoArr[2],
           func: token.content.replace(/export/gi, "").trim(),
         });
       }
+
       if (infoArr.includes("js") || infoArr.includes("ts")) {
         let importStr = "";
         let htmlCode = "";
