@@ -105,12 +105,7 @@ export const mdPlugin = (md: any) => {
         // 代码
         let code = encodeURIComponent(token.content);
         if (infoArr.includes("run")) {
-          return `
-          <div class="language-${infoArr[0]} run extra-class">
-            ${htmlCode}
-            <vp-code cache="${cache}" code="${code}">${token.content}</vp-code>
-          </div>
-          `;
+          return `<div class="language-${infoArr[0]} run extra-class">${htmlCode}<vp-code cache="${cache}" code="${code}">${token.content}</vp-code></div>`;
         } else {
           return rawCode;
         }

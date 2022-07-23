@@ -2,7 +2,7 @@ import escapeHtml from "escape-html";
 import prism from "prismjs";
 // const loadLanguages = require("prismjs/components/index");
 // loadLanguages(["markup", "css", "javascript"]);
-function wrap(code: string, lang: string): string {
+function wrap(code, lang) {
   if (lang === "text") {
     code = escapeHtml(code);
   }
@@ -11,7 +11,7 @@ function wrap(code: string, lang: string): string {
 /**
  * 代码颜色高亮
  */
-export const highlight = (str: string, lang: string) => {
+export const highlight = (str, lang) => {
   if (!lang) {
     return wrap(str, "text");
   }

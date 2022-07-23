@@ -19,9 +19,14 @@ let runCode = computed(() => {
   cacheArr.map((item) => {
     if (decodedCode.value.includes(item.name)) {
       evalStr = item.func + "\n" + evalStr;
+      evalStr = evalStr.trim();
     }
   });
-  return eval(evalStr);
+  try {
+    return eval(evalStr);
+  } catch (error) {
+    return "渲染错误：" + error;
+  }
 });
 </script>
 

@@ -19,17 +19,23 @@ export function getFileName(path) {
 export function getCodeName(content) {
   let searchList = ["export const", "export function"];
   let result = null;
-  searchList.map((search) => {
+  searchList.forEach((search) => {
     let pos = content.indexOf(search);
-    if (search == searchList[0]) {
-      let pos2 = content.indexOf("=", pos + search.length);
-      if (pos2 > pos) {
-        result = content.slice(pos + search.length, pos2).trim();
+    if (pos > -1) {
+      if (search == searchList[0]) {
+        let reg = /export\s*const\s*(\w*)\s*=/;
+        let res = content.match(reg);
+
+        if (res) {
+          result = res[1];
+        }
       }
-    } else {
-      let pos2 = content.indexOf("(", pos + search.length);
-      if (pos2 > pos) {
-        result = content.slice(pos + search.length, pos2).trim();
+      if (search == searchList[1]) {
+        let reg = /export\s*function\s*(\w*)\s*\(/;
+        let res = content.match(reg);
+        if (res) {
+          result = res[1];
+        }
       }
     }
   });
