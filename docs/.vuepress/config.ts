@@ -9,7 +9,13 @@ import { webpackPlugin } from "./plugins/word";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
-  head: [["link", { rel: "icon", href: "/assets/xiaochou.jpg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/assets/xiaochou.jpg" }],
+    [
+      "script",
+      { src: "https://unpkg.com/better-mock@0.3.4/dist/mock.browser.js" },
+    ],
+  ],
 
   markdown: {
     lineNumbers: false,
