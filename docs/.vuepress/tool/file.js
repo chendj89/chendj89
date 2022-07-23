@@ -13,23 +13,26 @@ export function getFileName(path) {
 
 /**
  * 获取代码段的方法名
- * @param {*} content 
- * @returns 
+ * @param {*} content
+ * @returns
  */
 export function getCodeName(content) {
-  let search = "export const";
-  let pos = content.indexOf(search);
-  let pos2 = content.indexOf("=", pos + search.length);
-  if (pos2 > pos) {
-    return content.slice(pos + search.length, pos2).trim();
-  }
-  return null;
+  let searchList = ["export const", "export function"];
+  let result = null;
+  searchList.map((search) => {
+    let pos = content.indexOf(search);
+    let pos2 = content.indexOf("=", pos + search.length);
+    if (pos2 > pos) {
+      result = content.slice(pos + search.length, pos2).trim();
+    }
+  });
+  return result;
 }
 /**
  * 获取代码段的代码格式
- * @param {*} path 
- * @returns 
+ * @param {*} path
+ * @returns
  */
-export function getCodeSuffix(path){
+export function getCodeSuffix(path) {
   return path.match(/[^.]+$/)[0];
 }
