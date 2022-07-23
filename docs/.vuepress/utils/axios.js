@@ -1,4 +1,5 @@
 import axios from "axios";
+import Mock from "better-mock";
 export function post(url, params) {
   return new Promise((resolve) => {
     setTimeout(() => {

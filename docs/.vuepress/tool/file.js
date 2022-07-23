@@ -21,9 +21,16 @@ export function getCodeName(content) {
   let result = null;
   searchList.map((search) => {
     let pos = content.indexOf(search);
-    let pos2 = content.indexOf("=", pos + search.length);
-    if (pos2 > pos) {
-      result = content.slice(pos + search.length, pos2).trim();
+    if (search == searchList[0]) {
+      let pos2 = content.indexOf("=", pos + search.length);
+      if (pos2 > pos) {
+        result = content.slice(pos + search.length, pos2).trim();
+      }
+    } else {
+      let pos2 = content.indexOf("(", pos + search.length);
+      if (pos2 > pos) {
+        result = content.slice(pos + search.length, pos2).trim();
+      }
     }
   });
   return result;
