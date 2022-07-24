@@ -46,6 +46,13 @@ function RepairProps(cmp) {
 RepairProps(ElementUI.DatePicker);
 RepairProps(ElementUI.TimePicker);
 RepairProps(ElementUI.TimeSelect);
-
 Vue.use(ElementUI);
 ```
+4、`el-dialog`弹窗显示时，按`esc`主体消失但遮罩不消失
+
+解决方案：
+```js
+// 遮罩层会插入至 Dialog 的父元素上
+"modal-append-to-body":false
+```
+5、`el-dialog`弹窗中再显示弹窗,`el-dialog`遮罩(`z-index`)层级不对，
