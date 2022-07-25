@@ -12,4 +12,9 @@ Object.assign(this.$data, this.$options.data());
 重置表单 
 ```js 
 this.$refs.form.resetFields();
+``` 
+
+cnpm
+```sh
+npm install -g cnpm --registry=https://registry.npmmirror.com
 ```

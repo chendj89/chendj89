@@ -25,6 +25,7 @@ import DashiconsTranslation from "~icons/dashicons/translation";
 import SimpleIconsBaidu from "~icons/simple-icons/baidu";
 import LogosCodepenIcon from "~icons/logos/codepen-icon";
 import MyMdn from "~icons/my-icons/mdn";
+import TwemojiHighVoltage from "~icons/twemoji/high-voltage";
 import LogosVueuse from "~icons/logos/vueuse";
 import LogosElement from "~icons/logos/element";
 import LogosVue from "~icons/logos/vue";
@@ -74,6 +75,12 @@ const menu = reactive({
       name: "vue3",
       link: "https://staging-cn.vuejs.org/",
       theme: "",
+    },
+    {
+      com: TwemojiHighVoltage,
+      name: "stackblitz",
+      link: "https://stackblitz.com/",
+      theme: "#1389fd",
     },
   ],
 });

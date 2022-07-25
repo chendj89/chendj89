@@ -114,7 +114,7 @@ export default defineConfig({
       "container",
       {
         type: "details",
-        before: (info) =>
+        before: (info:string) =>
           `<details class="custom-block details">${
             info ? `<summary>${info}</summary>` : ""
           }\n`,
