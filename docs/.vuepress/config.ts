@@ -76,8 +76,8 @@ export default defineConfig({
           "./docs/.vuepress/examples",
         ],
         getComponentName: (filename) => {
-          console.log(filename);
           filename = filename.replace("navbar/", "").replace(/\/|\\/g, "-");
+          console.log(filename);
           return filename;
         },
       },

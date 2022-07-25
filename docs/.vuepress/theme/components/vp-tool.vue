@@ -29,6 +29,7 @@ import TwemojiHighVoltage from "~icons/twemoji/high-voltage";
 import LogosVueuse from "~icons/logos/vueuse";
 import LogosElement from "~icons/logos/element";
 import LogosVue from "~icons/logos/vue";
+import LogosNpmIcon from '~icons/logos/npm-icon'
 
 let show = useLocalStorage("vp-tool", false);
 
@@ -81,6 +82,12 @@ const menu = reactive({
       name: "stackblitz",
       link: "https://stackblitz.com/",
       theme: "#1389fd",
+    },
+    {
+      com: LogosNpmIcon,
+      name: "npm",
+      link: "https://www.npmjs.com/search?q=ts",
+      theme: "",
     },
   ],
 });
