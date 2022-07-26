@@ -78,12 +78,6 @@ const menu = reactive({
       theme: "",
     },
     {
-      com: TwemojiHighVoltage,
-      name: "stackblitz",
-      link: "https://stackblitz.com/",
-      theme: "#1389fd",
-    },
-    {
       com: LogosNpmIcon,
       name: "npm",
       link: "https://www.npmjs.com/search?q=ts",
