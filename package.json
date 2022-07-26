@@ -29,7 +29,7 @@
     "@types/markdown-it-container": "^2.0.5",
     "@types/prismjs": "^1.26.0",
     "@vuepress/types": "^1.9.7",
-    "@vueuse/core": "^8.9.4",
+    "@vueuse/core": "^9.0.0",
     "axios": "^0.27.2",
     "better-mock": "^0.3.4",
     "cheerio": "^1.0.0-rc.12",
