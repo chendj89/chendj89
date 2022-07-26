@@ -32,12 +32,15 @@ import LogosVue from "~icons/logos/vue";
 import LogosNpmIcon from '~icons/logos/npm-icon'
 
 let show = useLocalStorage("vp-tool", false);
-
 useEventListener(document, "keydown", (e) => {
   var keyCode = e.key || e.code;
   if (e.altKey && keyCode == 1) {
     show.value = !show.value;
   }
+});
+watch(show,(val)=>{
+  console.log(val);
+  localStorage.setItem("vp-tool",val);
 });
 const menu = reactive({
   list: [
