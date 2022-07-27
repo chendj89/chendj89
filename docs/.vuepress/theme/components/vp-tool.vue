@@ -30,6 +30,7 @@ import LogosVueuse from "~icons/logos/vueuse";
 import LogosElement from "~icons/logos/element";
 import LogosVue from "~icons/logos/vue";
 import LogosNpmIcon from '~icons/logos/npm-icon'
+import LogosVitejs from '~icons/logos/vitejs'
 
 let show = useLocalStorage("vp-tool", false);
 useEventListener(document, "keydown", (e) => {
@@ -74,16 +75,28 @@ const menu = reactive({
       link: "https://element.eleme.cn/#/zh-CN/component/installation",
       theme: "",
     },
+    // {
+    //   com: LogosVue,
+    //   name: "vue3",
+    //   link: "https://staging-cn.vuejs.org/",
+    //   theme: "",
+    // },
     {
       com: LogosVue,
-      name: "vue3",
-      link: "https://staging-cn.vuejs.org/",
+      name: "vue2",
+      link: "https://cn.vuejs.org/v2/guide/",
       theme: "",
     },
     {
       com: LogosNpmIcon,
       name: "npm",
       link: "https://www.npmjs.com/search?q=ts",
+      theme: "",
+    },
+    {
+      com: LogosVitejs,
+      name: "vite",
+      link: "https://cn.vitejs.dev/",
       theme: "",
     },
   ],
