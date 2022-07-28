@@ -3,12 +3,19 @@
 </template>
 
 <script setup>
+import { getCurrentInstance } from "vue";
 import Basic from "./basic.vue";
 import func from "./func.vue";
 import { useDialog } from "@docs/.vuepress/utils/useDialog";
-const click=()=>{
-  useDialog(func,{});
-}
+let ins = getCurrentInstance();
+const click = () => {
+  useDialog(Basic, {
+    _____________game: "-----",
+    ins,
+  }).then((res) => {
+    console.log(res);
+  });
+};
 </script>
 
 <style lang="scss" scoped></style>

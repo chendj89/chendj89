@@ -26,5 +26,11 @@ export default ({
     get,
     axios,
   };
+  Vue.prototype.$hero = {
+    version: "1.0.0",
+    format(val) {
+      return val + "🤡";
+    },
+  };
   // console.log(Object.keys(Vue.options.components));
 };

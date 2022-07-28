@@ -7,6 +7,7 @@
 <script>
 export default {
   data() {
+    console.log(this);
     return {};
   },
   methods: {
@@ -14,9 +15,9 @@ export default {
       this.$resolve({ msg: "我是表格" });
     },
   },
-  destroyed(){
-    console.log('销毁表格');
-  }
+  destroyed() {
+    console.log("销毁表格");
+  },
 };
 </script>
 

@@ -6,7 +6,7 @@
     :before-close="handleClose"
     :destroy-on-close="true"
   >
-    <span>这是一段信息</span>
+    <span>这是一段信息{{ hero.name }}</span>
     <span slot="footer" class="dialog-footer">
       <el-button @click="handleClose">取 消</el-button>
       <el-button type="primary" @click="handleClose">确 定</el-button>
@@ -15,12 +15,19 @@
 </template>
 
 <script setup>
-import { ref, reactive, getCurrentInstance, onUnmounted } from "vue";
+import { ref, reactive, getCurrentInstance, onUnmounted, onMounted } from "vue";
 const ins = getCurrentInstance();
 const dialogVisible = ref(true);
 const handleClose = (done) => {
-  ins.proxy.$resolve();
+  ins.proxy.$resolve({ msg: "弹窗" });
 };
+let hero = reactive({
+  name: ins.proxy.$hero.format("嘻嘻"),
+});
+onMounted(() => {
+  console.log(ins.proxy.$http);
+});
+
 onUnmounted(() => {
   console.log("销毁--basic");
 });
