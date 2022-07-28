@@ -25,7 +25,7 @@ let hero = reactive({
   name: ins.proxy.$hero.format("嘻嘻"),
 });
 onMounted(() => {
-  console.log(ins.proxy.$http);
+  // console.log(ins.proxy.$http);
 });
 
 onUnmounted(() => {

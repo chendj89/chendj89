@@ -8,13 +8,13 @@ import Basic from "./basic.vue";
 import func from "./func.vue";
 import { useDialog } from "@docs/.vuepress/utils/useDialog";
 let ins = getCurrentInstance();
-const click = () => {
+let p1 = getCurrentInstance();
+console.log(p1);
+const click = function () {
   useDialog(Basic, {
     _____________game: "-----",
     ins,
-  }).then((res) => {
-    console.log(res);
-  });
+  }).then((res) => {});
 };
 </script>
 

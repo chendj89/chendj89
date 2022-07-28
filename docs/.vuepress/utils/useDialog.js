@@ -1,5 +1,7 @@
-import Vue from "vue";
+import Vue, { getCurrentInstance } from "vue";
 export function useDialog(Component, options) {
+  let ins = getCurrentInstance();
+  console.log(ins);
   return ((Component, options) => {
     return new Promise((resolve, reject) => {
       const ComponentConstructor = Vue.extend(Component);
