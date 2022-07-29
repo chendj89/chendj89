@@ -4,7 +4,7 @@ sidebar: false
 --- 
 
 :::demo 使用对话框
-dialog/useer
+dialog/link
 :::
 
 

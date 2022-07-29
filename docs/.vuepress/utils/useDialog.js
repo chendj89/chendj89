@@ -1,13 +1,11 @@
-import Vue, { getCurrentInstance } from "vue";
+import Vue from "vue";
 export function useDialog(Component, options) {
-  let ins = getCurrentInstance();
-  console.log(ins);
   return ((Component, options) => {
     return new Promise((resolve, reject) => {
       const ComponentConstructor = Vue.extend(Component);
       if (options && options.ins) {
         // https://blog.csdn.net/qq_14993591/article/details/121174829
-        ComponentConstructor.prototype.__proto__ = options.ins.proxy.prototype;
+        // ComponentConstructor.prototype.__proto__ = options.ins.proxy.prototype;
       }
       ComponentConstructor.prototype.$resolve = function (params) {
         destroyInstance();
@@ -28,4 +26,8 @@ export function useDialog(Component, options) {
       document.body.appendChild(instance.$el);
     });
   })(Component, options);
+}
+
+export const useName=()=>{
+  console.log(this);
 }
