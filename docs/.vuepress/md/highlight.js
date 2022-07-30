@@ -1,7 +1,7 @@
 import escapeHtml from "escape-html";
 import prism from "prismjs";
-// const loadLanguages = require("prismjs/components/index");
-// loadLanguages(["markup", "css", "javascript"]);
+import loadLanguages from "prismjs/components/index.js";
+loadLanguages(["markup", "css", "javascript", "jsdoc"]);
 function wrap(code, lang) {
   if (lang === "text") {
     code = escapeHtml(code);
