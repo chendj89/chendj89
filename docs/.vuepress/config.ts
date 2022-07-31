@@ -6,6 +6,7 @@ import Icons from "unplugin-icons/webpack";
 import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/webpack";
 import { webpackPlugin } from "./plugins/word";
+import { webpackPlugin as scssPlugin } from "./plugins/scss";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
@@ -56,6 +57,7 @@ export default defineConfig({
         },
       }),
       webpackPlugin(),
+      scssPlugin(),
     ],
     module: {
       rules: [
@@ -114,7 +116,7 @@ export default defineConfig({
       "container",
       {
         type: "details",
-        before: (info:string) =>
+        before: (info: string) =>
           `<details class="custom-block details">${
             info ? `<summary>${info}</summary>` : ""
           }\n`,

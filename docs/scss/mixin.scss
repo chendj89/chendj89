@@ -1,0 +1,10 @@
+// 滚动条
+@mixin scroll() {
+  overflow-y: auto;
+}
+
+// 按钮
+@mixin btn {
+  cursor: pointer;
+  user-select: none;
+}
