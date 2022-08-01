@@ -4,9 +4,9 @@
       <el-table ref="mainTable" :data="table.list" border tooltip-effect="dark" style="width: 100%" size="small"
         :header-cell-style="{ textAlign: 'center' }" :cell-style="{ textAlign: 'center' }" row-key="id"
         highlight-current-row v-loading="loading">
-        <el-table-column type="selection" width="50">
+        <el-table-column type="selection" width="60">
         </el-table-column>
-        <el-table-column type="index" width="50"></el-table-column>
+        <el-table-column type="index" width="60"></el-table-column>
         <el-table-column prop="name" label="姓名"></el-table-column>
         <el-table-column prop="date" label="日期" show-overflow-tooltip></el-table-column>
         <el-table-column prop="age" label="年纪" show-overflow-tooltip>

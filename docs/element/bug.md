@@ -56,3 +56,9 @@ Vue.use(ElementUI);
 "modal-append-to-body":false
 ```
 5、`el-dialog`弹窗中再显示弹窗,`el-dialog`遮罩(`z-index`)层级不对，
+
+6、`el-table`统计支持自定义`html`片段
+
+```js
+let sums[index]=vm.$createElement("div",{domProps:{innerHTML:'<div>合计</div>'}})
+```

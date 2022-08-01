@@ -56,8 +56,9 @@ export default defineConfig({
           },
         },
       }),
-      webpackPlugin(),
+
       scssPlugin(),
+      webpackPlugin(),
     ],
     module: {
       rules: [

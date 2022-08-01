@@ -1,3 +1,8 @@
+$vueVersion:2 !default;
+
+
+
+
 // 滚动条
 @mixin scroll {
   margin: 0;
@@ -10,4 +15,8 @@
 @mixin btn {
   cursor: pointer;
   user-select: none;
+}
+
+@mixin input {
+  cursor: pointer;
 }

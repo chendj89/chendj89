@@ -8,7 +8,7 @@ export const unplugin = createUnplugin((options) => {
   return {
     name: "scss3",
     transformInclude(id) {
-      return id.endsWith("样式.md");
+      return id.endsWith(".md");
     },
     async transform(code,id) {
       let reg1 = /^@\[code\s*(\{\s*[\w,]*\s*\})?\s*\]\(.*\)\s*$/gm;
@@ -25,17 +25,16 @@ export const unplugin = createUnplugin((options) => {
             let content = fs.readFileSync(file, "utf-8");
             // 文件后缀
             let extname = path.extname(file).replace(".", "");
-            console.log(extname);
-
             if (["scss", "css"].includes(extname)) {
               let t0: any = [];
               if (list[1]) {
+                let ast = csstree.parse(content, { positions: true });
+                fs.writeFileSync(path.join(__dirname,"1.json"),JSON.stringify(ast,null,2),"utf-8")
                 let methodList: any = list[1].replace("{", "").replace("}", "");
                 methodList = methodList.split(",");
                 for (let j = 0; j < methodList.length; j++) {
                   let methodName = methodList[j];
                   methodName = methodName.trim();
-                  let ast = csstree.parse(content, { positions: true });
                   let strMethod = "";
                   ast.children.map((cell) => {
                     if (cell.prelude.value.includes(methodName)) {
