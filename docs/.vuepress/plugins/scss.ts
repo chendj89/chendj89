@@ -1,20 +1,16 @@
 import { createUnplugin } from "unplugin";
 import fs from "fs";
 import path from "path";
-import postcss, { ChildNode, Rule } from "postcss";
-import postcssNested from "postcss-nested";
-import autoprefixer from "autoprefixer";
 import babel from "@babel/parser";
-import postscss from "postcss-scss";
 import * as csstree from "css-tree";
 
 export const unplugin = createUnplugin((options) => {
   return {
-    name: "scss",
+    name: "scss3",
     transformInclude(id) {
       return id.endsWith("样式.md");
     },
-    async transform(code) {
+    async transform(code,id) {
       let reg1 = /^@\[code\s*(\{\s*[\w,]*\s*\})?\s*\]\(.*\)\s*$/gm;
       let reg2 = /^@\[code\s*(\{\s*[\w,]*\s*\})?\s*\]\((.*)\)$/;
       let result = code.match(reg1);
@@ -30,9 +26,8 @@ export const unplugin = createUnplugin((options) => {
             // 文件后缀
             let extname = path.extname(file).replace(".", "");
             console.log(extname);
-            
-            if (["scss", "css"].includes(extname)) {
 
+            if (["scss", "css"].includes(extname)) {
               let t0: any = [];
               if (list[1]) {
                 let methodList: any = list[1].replace("{", "").replace("}", "");
@@ -61,9 +56,8 @@ export const unplugin = createUnplugin((options) => {
                     item,
                     "```" + extname + "\n" + t0.join("\n") + "\n```"
                   );
-                  console.log(t0);
                 }
-              }else {
+              } else {
                 code = code.replace(
                   item,
                   "```" + extname + "\n" + content + "\n```"
@@ -120,8 +114,6 @@ export const unplugin = createUnplugin((options) => {
           }
         }
       }
-      console.log(code);
-      
       return code;
     },
   };
