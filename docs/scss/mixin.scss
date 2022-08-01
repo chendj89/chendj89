@@ -1,6 +1,28 @@
 // 滚动条
-@mixin scroll() {
-  overflow-y: auto;
+// 滚动条样式
+@mixin scrollBar {
+  &::-webkit-scrollbar {
+    width: 6px !important;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height:6px !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 
 // 按钮
@@ -8,3 +30,4 @@
   cursor: pointer;
   user-select: none;
 }
+
