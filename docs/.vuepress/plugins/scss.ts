@@ -5,6 +5,8 @@ import postcss, { ChildNode, Rule } from "postcss";
 import postcssNested from "postcss-nested";
 import autoprefixer from "autoprefixer";
 import babel from "@babel/parser";
+import postscss from "postcss-scss";
+import * as csstree from "css-tree";
 
 export const unplugin = createUnplugin((options) => {
   return {
@@ -27,35 +29,44 @@ export const unplugin = createUnplugin((options) => {
             let content = fs.readFileSync(file, "utf-8");
             // 文件后缀
             let extname = path.extname(file).replace(".", "");
+            console.log(extname);
+            
             if (["scss", "css"].includes(extname)) {
+
               let t0: any = [];
-              let methodList: any = list[1].replace("{", "").replace("}", "");
-              methodList = methodList.split(",");
-              for (let j = 0; j < methodList.length; j++) {
-                let methodName = methodList[j];
-                methodName = methodName.trim();
-                await postcss([postcssNested, autoprefixer])
-                  .process(content)
-                  .then((res) => {
-                    let strMethod = "";
-                    for (let j = 0; j < res.root.nodes.length; j++) {
-                      let rule = res.root.nodes[j] as Rule;
-                      if (rule.selector.includes(methodName)) {
-                        strMethod = content.slice(
-                          rule.source?.start?.offset,
-                          (rule.source?.end?.offset || 0) + 1
-                        );
+              if (list[1]) {
+                let methodList: any = list[1].replace("{", "").replace("}", "");
+                methodList = methodList.split(",");
+                for (let j = 0; j < methodList.length; j++) {
+                  let methodName = methodList[j];
+                  methodName = methodName.trim();
+                  let ast = csstree.parse(content, { positions: true });
+                  let strMethod = "";
+                  ast.children.map((cell) => {
+                    if (cell.prelude.value.includes(methodName)) {
+                      strMethod = content.slice(
+                        cell.loc.start.offset,
+                        cell.loc.end.offset + 1
+                      );
+                      if (strMethod) {
+                        t0.push(strMethod);
+                        strMethod = "";
                       }
                     }
-                    if (strMethod) {
-                      t0.push(strMethod);
-                    }
                   });
-              }
-              if (t0.length) {
+                }
+
+                if (t0.length) {
+                  code = code.replace(
+                    item,
+                    "```" + extname + "\n" + t0.join("\n") + "\n```"
+                  );
+                  console.log(t0);
+                }
+              }else {
                 code = code.replace(
                   item,
-                  "```" + extname + "\n" + t0.join("\n") + "\n```"
+                  "```" + extname + "\n" + content + "\n```"
                 );
               }
             } else {
@@ -109,7 +120,8 @@ export const unplugin = createUnplugin((options) => {
           }
         }
       }
-
+      console.log(code);
+      
       return code;
     },
   };
