@@ -1,7 +1,4 @@
-$vueVersion:2 !default;
-
-
-
+$theme:#f00;
 
 // 滚动条
 @mixin scroll {
@@ -16,6 +13,7 @@ $vueVersion:2 !default;
   cursor: pointer;
   user-select: none;
 }
+
 
 @mixin input {
   cursor: pointer;

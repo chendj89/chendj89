@@ -2,15 +2,14 @@ import { createUnplugin } from "unplugin";
 import fs from "fs";
 import path from "path";
 import babel from "@babel/parser";
-import * as csstree from "css-tree";
-
+import postcss from "postcss";
 export const unplugin = createUnplugin((options) => {
   return {
     name: "scss3",
     transformInclude(id) {
       return id.endsWith(".md");
     },
-    async transform(code,id) {
+    async transform(code, id) {
       let reg1 = /^@\[code\s*(\{\s*[\w,]*\s*\})?\s*\]\(.*\)\s*$/gm;
       let reg2 = /^@\[code\s*(\{\s*[\w,]*\s*\})?\s*\]\((.*)\)$/;
       let result = code.match(reg1);
@@ -28,23 +27,37 @@ export const unplugin = createUnplugin((options) => {
             if (["scss", "css"].includes(extname)) {
               let t0: any = [];
               if (list[1]) {
-                let ast = csstree.parse(content, { positions: true });
-                fs.writeFileSync(path.join(__dirname,"1.json"),JSON.stringify(ast,null,2),"utf-8")
+                let ast = postcss.parse(content, {
+                  // syntax: postcssScss,
+                });
                 let methodList: any = list[1].replace("{", "").replace("}", "");
                 methodList = methodList.split(",");
                 for (let j = 0; j < methodList.length; j++) {
                   let methodName = methodList[j];
                   methodName = methodName.trim();
                   let strMethod = "";
-                  ast.children.map((cell) => {
-                    if (cell.prelude.value.includes(methodName)) {
-                      strMethod = content.slice(
-                        cell.loc.start.offset,
-                        cell.loc.end.offset + 1
-                      );
-                      if (strMethod) {
-                        t0.push(strMethod);
-                        strMethod = "";
+                  ast.nodes.map((cell: any) => {
+                    if (cell.selector) {
+                      if (cell.selector.includes(methodName)) {
+                        strMethod = content.slice(
+                          cell.source.start.offset,
+                          cell.source.end.offset + 1
+                        );
+                        if (strMethod) {
+                          t0.push(strMethod);
+                          strMethod = "";
+                        }
+                      }
+                    } else if (cell.params) {
+                      if (cell.params.includes(methodName)) {
+                        strMethod = content.slice(
+                          cell.source.start.offset,
+                          cell.source.end.offset + 1
+                        );
+                        if (strMethod) {
+                          t0.push(strMethod);
+                          strMethod = "";
+                        }
                       }
                     }
                   });
