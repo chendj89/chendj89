@@ -1,0 +1,766 @@
+{
+  "全局 API": {
+    "h2": "全局 API",
+    "list": [
+      {
+        "h3": "引用概要",
+        "list": [
+          {
+            "text": "createApp()",
+            "href": "/api/application.html#create-app"
+          },
+          {
+            "text": "createSSRApp()",
+            "href": "/api/application.html#create-ssr-app"
+          },
+          {
+            "text": "app.mount()",
+            "href": "/api/application.html#app-mount"
+          },
+          {
+            "text": "app.unmount()",
+            "href": "/api/application.html#app-unmount"
+          },
+          {
+            "text": "app.provide()",
+            "href": "/api/application.html#app-provide"
+          },
+          {
+            "text": "app.component()",
+            "href": "/api/application.html#app-component"
+          },
+          {
+            "text": "app.directive()",
+            "href": "/api/application.html#app-directive"
+          },
+          {
+            "text": "app.use()",
+            "href": "/api/application.html#app-use"
+          },
+          {
+            "text": "app.mixin()",
+            "href": "/api/application.html#app-mixin"
+          },
+          {
+            "text": "app.version",
+            "href": "/api/application.html#app-version"
+          },
+          {
+            "text": "app.config",
+            "href": "/api/application.html#app-config"
+          },
+          {
+            "text": "app.config.errorHandler",
+            "href": "/api/application.html#app-config-errorhandler"
+          },
+          {
+            "text": "app.config.warnHandler",
+            "href": "/api/application.html#app-config-warnhandler"
+          },
+          {
+            "text": "app.config.performance",
+            "href": "/api/application.html#app-config-performance"
+          },
+          {
+            "text": "app.config.compilerOptions",
+            "href": "/api/application.html#app-config-compileroptions"
+          },
+          {
+            "text": "app.config.globalProperties",
+            "href": "/api/application.html#app-config-globalproperties"
+          },
+          {
+            "text": "app.config.optionMergeStrategies",
+            "href": "/api/application.html#app-config-optionmergestrategies"
+          },
+          {
+            "text": "version",
+            "href": "/api/general.html#version"
+          },
+          {
+            "text": "nextTick()",
+            "href": "/api/general.html#nexttick"
+          },
+          {
+            "text": "defineComponent()",
+            "href": "/api/general.html#definecomponent"
+          },
+          {
+            "text": "defineAsyncComponent()",
+            "href": "/api/general.html#defineasynccomponent"
+          },
+          {
+            "text": "defineCustomElement()",
+            "href": "/api/general.html#definecustomelement"
+          }
+        ]
+      }
+    ]
+  },
+  "组合式 API": {
+    "h2": "组合式 API",
+    "list": [
+      {
+        "h3": "setup()响应式: 核心响应式: 工具响应式: 进阶生命周期钩子依赖注入",
+        "list": [
+          {
+            "text": "基本使用",
+            "href": "/api/composition-api-setup.html#basic-usage"
+          },
+          {
+            "text": "访问 Prop",
+            "href": "/api/composition-api-setup.html#accessing-props"
+          },
+          {
+            "text": "Setup 的上下文",
+            "href": "/api/composition-api-setup.html#setup-context"
+          },
+          {
+            "text": "与渲染函数一起使用",
+            "href": "/api/composition-api-setup.html#usage-with-render-functions"
+          },
+          {
+            "text": "ref()",
+            "href": "/api/reactivity-core.html#ref"
+          },
+          {
+            "text": "computed ()",
+            "href": "/api/reactivity-core.html#computed"
+          },
+          {
+            "text": "reactive()",
+            "href": "/api/reactivity-core.html#reactive"
+          },
+          {
+            "text": "readonly()",
+            "href": "/api/reactivity-core.html#readonly"
+          },
+          {
+            "text": "watchEffect()",
+            "href": "/api/reactivity-core.html#watcheffect"
+          },
+          {
+            "text": "watchPostEffect()",
+            "href": "/api/reactivity-core.html#watchposteffect"
+          },
+          {
+            "text": "watchSyncEffect()",
+            "href": "/api/reactivity-core.html#watchsynceffect"
+          },
+          {
+            "text": "watch()",
+            "href": "/api/reactivity-core.html#watch"
+          },
+          {
+            "text": "isRef()",
+            "href": "/api/reactivity-utilities.html#isref"
+          },
+          {
+            "text": "unref()",
+            "href": "/api/reactivity-utilities.html#unref"
+          },
+          {
+            "text": "toRef()",
+            "href": "/api/reactivity-utilities.html#toref"
+          },
+          {
+            "text": "toRefs()",
+            "href": "/api/reactivity-utilities.html#torefs"
+          },
+          {
+            "text": "isProxy()",
+            "href": "/api/reactivity-utilities.html#isproxy"
+          },
+          {
+            "text": "isReactive()",
+            "href": "/api/reactivity-utilities.html#isreactive"
+          },
+          {
+            "text": "isReadonly()",
+            "href": "/api/reactivity-utilities.html#isreadonly"
+          },
+          {
+            "text": "shallowRef()",
+            "href": "/api/reactivity-advanced.html#shallowref"
+          },
+          {
+            "text": "triggerRef()",
+            "href": "/api/reactivity-advanced.html#triggerref"
+          },
+          {
+            "text": "customRef()",
+            "href": "/api/reactivity-advanced.html#customref"
+          },
+          {
+            "text": "shallowReactive()",
+            "href": "/api/reactivity-advanced.html#shallowreactive"
+          },
+          {
+            "text": "shallowReadonly()",
+            "href": "/api/reactivity-advanced.html#shallowreadonly"
+          },
+          {
+            "text": "toRaw()",
+            "href": "/api/reactivity-advanced.html#toraw"
+          },
+          {
+            "text": "markRaw()",
+            "href": "/api/reactivity-advanced.html#markraw"
+          },
+          {
+            "text": "effectScope()",
+            "href": "/api/reactivity-advanced.html#effectscope"
+          },
+          {
+            "text": "getCurrentScope()",
+            "href": "/api/reactivity-advanced.html#getcurrentscope"
+          },
+          {
+            "text": "onScopeDispose()",
+            "href": "/api/reactivity-advanced.html#onscopedispose"
+          },
+          {
+            "text": "onMounted()",
+            "href": "/api/composition-api-lifecycle.html#onmounted"
+          },
+          {
+            "text": "onUpdated()",
+            "href": "/api/composition-api-lifecycle.html#onupdated"
+          },
+          {
+            "text": "onUnmounted()",
+            "href": "/api/composition-api-lifecycle.html#onunmounted"
+          },
+          {
+            "text": "onBeforeMount()",
+            "href": "/api/composition-api-lifecycle.html#onbeforemount"
+          },
+          {
+            "text": "onBeforeUpdate()",
+            "href": "/api/composition-api-lifecycle.html#onbeforeupdate"
+          },
+          {
+            "text": "onBeforeUnmount()",
+            "href": "/api/composition-api-lifecycle.html#onbeforeunmount"
+          },
+          {
+            "text": "onErrorCaptured()",
+            "href": "/api/composition-api-lifecycle.html#onerrorcaptured"
+          },
+          {
+            "text": "onRenderTracked()",
+            "href": "/api/composition-api-lifecycle.html#onrendertracked"
+          },
+          {
+            "text": "onRenderTriggered()",
+            "href": "/api/composition-api-lifecycle.html#onrendertriggered"
+          },
+          {
+            "text": "onActivated()",
+            "href": "/api/composition-api-lifecycle.html#onactivated"
+          },
+          {
+            "text": "onDeactivated()",
+            "href": "/api/composition-api-lifecycle.html#ondeactivated"
+          },
+          {
+            "text": "onServerPrefetch()",
+            "href": "/api/composition-api-lifecycle.html#onserverprefetch"
+          },
+          {
+            "text": "provide()",
+            "href": "/api/composition-api-dependency-injection.html#provide"
+          },
+          {
+            "text": "inject()",
+            "href": "/api/composition-api-dependency-injection.html#inject"
+          }
+        ]
+      }
+    ]
+  },
+  "选项式 API": {
+    "h2": "选项式 API",
+    "list": [
+      {
+        "h3": "状态选项渲染选项生命周期选项组合选项其他杂项组件实例",
+        "list": [
+          {
+            "text": "data",
+            "href": "/api/options-state.html#data"
+          },
+          {
+            "text": "props",
+            "href": "/api/options-state.html#props"
+          },
+          {
+            "text": "computed",
+            "href": "/api/options-state.html#computed"
+          },
+          {
+            "text": "methods",
+            "href": "/api/options-state.html#methods"
+          },
+          {
+            "text": "watch",
+            "href": "/api/options-state.html#watch"
+          },
+          {
+            "text": "emits",
+            "href": "/api/options-state.html#emits"
+          },
+          {
+            "text": "expose",
+            "href": "/api/options-state.html#expose"
+          },
+          {
+            "text": "template",
+            "href": "/api/options-rendering.html#template"
+          },
+          {
+            "text": "render",
+            "href": "/api/options-rendering.html#render"
+          },
+          {
+            "text": "compilerOptions",
+            "href": "/api/options-rendering.html#compileroptions"
+          },
+          {
+            "text": "beforeCreate",
+            "href": "/api/options-lifecycle.html#beforecreate"
+          },
+          {
+            "text": "created",
+            "href": "/api/options-lifecycle.html#created"
+          },
+          {
+            "text": "beforeMount",
+            "href": "/api/options-lifecycle.html#beforemount"
+          },
+          {
+            "text": "mounted",
+            "href": "/api/options-lifecycle.html#mounted"
+          },
+          {
+            "text": "beforeUpdate",
+            "href": "/api/options-lifecycle.html#beforeupdate"
+          },
+          {
+            "text": "updated",
+            "href": "/api/options-lifecycle.html#updated"
+          },
+          {
+            "text": "beforeUnmount",
+            "href": "/api/options-lifecycle.html#beforeunmount"
+          },
+          {
+            "text": "unmounted",
+            "href": "/api/options-lifecycle.html#unmounted"
+          },
+          {
+            "text": "errorCaptured",
+            "href": "/api/options-lifecycle.html#errorcaptured"
+          },
+          {
+            "text": "renderTracked",
+            "href": "/api/options-lifecycle.html#rendertracked"
+          },
+          {
+            "text": "renderTriggered",
+            "href": "/api/options-lifecycle.html#rendertriggered-sup-classvt-badge-dev-only"
+          },
+          {
+            "text": "activated",
+            "href": "/api/options-lifecycle.html#activated"
+          },
+          {
+            "text": "deactivated",
+            "href": "/api/options-lifecycle.html#deactivated"
+          },
+          {
+            "text": "serverPrefetch",
+            "href": "/api/options-lifecycle.html#serverprefetch"
+          },
+          {
+            "text": "provide",
+            "href": "/api/options-composition.html#provide"
+          },
+          {
+            "text": "inject",
+            "href": "/api/options-composition.html#inject"
+          },
+          {
+            "text": "mixins",
+            "href": "/api/options-composition.html#mixins"
+          },
+          {
+            "text": "extends",
+            "href": "/api/options-composition.html#extends"
+          },
+          {
+            "text": "name",
+            "href": "/api/options-misc.html#name"
+          },
+          {
+            "text": "inheritAttrs",
+            "href": "/api/options-misc.html#inheritattrs"
+          },
+          {
+            "text": "components",
+            "href": "/api/options-misc.html#components"
+          },
+          {
+            "text": "directives",
+            "href": "/api/options-misc.html#directives"
+          },
+          {
+            "text": "$data",
+            "href": "/api/component-instance.html#data"
+          },
+          {
+            "text": "$props",
+            "href": "/api/component-instance.html#props"
+          },
+          {
+            "text": "$el",
+            "href": "/api/component-instance.html#el"
+          },
+          {
+            "text": "$options",
+            "href": "/api/component-instance.html#options"
+          },
+          {
+            "text": "$parent",
+            "href": "/api/component-instance.html#parent"
+          },
+          {
+            "text": "$root",
+            "href": "/api/component-instance.html#root"
+          },
+          {
+            "text": "$slots",
+            "href": "/api/component-instance.html#slots"
+          },
+          {
+            "text": "$refs",
+            "href": "/api/component-instance.html#refs"
+          },
+          {
+            "text": "$attrs",
+            "href": "/api/component-instance.html#attrs"
+          },
+          {
+            "text": "$watch()",
+            "href": "/api/component-instance.html#watch"
+          },
+          {
+            "text": "$emit()",
+            "href": "/api/component-instance.html#emit"
+          },
+          {
+            "text": "$forceUpdate()",
+            "href": "/api/component-instance.html#forceupdate"
+          },
+          {
+            "text": "$nextTick()",
+            "href": "/api/component-instance.html#nexttick"
+          }
+        ]
+      }
+    ]
+  },
+  "内置内容": {
+    "h2": "内置内容",
+    "list": [
+      {
+        "h3": "指令组件特殊元素特殊 Attribute",
+        "list": [
+          {
+            "text": "v-text",
+            "href": "/api/built-in-directives.html#v-text"
+          },
+          {
+            "text": "v-html",
+            "href": "/api/built-in-directives.html#v-html"
+          },
+          {
+            "text": "v-show",
+            "href": "/api/built-in-directives.html#v-show"
+          },
+          {
+            "text": "v-if",
+            "href": "/api/built-in-directives.html#v-if"
+          },
+          {
+            "text": "v-else",
+            "href": "/api/built-in-directives.html#v-else"
+          },
+          {
+            "text": "v-else-if",
+            "href": "/api/built-in-directives.html#v-else-if"
+          },
+          {
+            "text": "v-for",
+            "href": "/api/built-in-directives.html#v-for"
+          },
+          {
+            "text": "v-on",
+            "href": "/api/built-in-directives.html#v-on"
+          },
+          {
+            "text": "v-bind",
+            "href": "/api/built-in-directives.html#v-bind"
+          },
+          {
+            "text": "v-model",
+            "href": "/api/built-in-directives.html#v-model"
+          },
+          {
+            "text": "v-slot",
+            "href": "/api/built-in-directives.html#v-slot"
+          },
+          {
+            "text": "v-pre",
+            "href": "/api/built-in-directives.html#v-pre"
+          },
+          {
+            "text": "v-once",
+            "href": "/api/built-in-directives.html#v-once"
+          },
+          {
+            "text": "v-memo",
+            "href": "/api/built-in-directives.html#v-memo"
+          },
+          {
+            "text": "v-cloak",
+            "href": "/api/built-in-directives.html#v-cloak"
+          },
+          {
+            "text": "<Transition>",
+            "href": "/api/built-in-components.html#transition"
+          },
+          {
+            "text": "<TransitionGroup>",
+            "href": "/api/built-in-components.html#transitiongroup"
+          },
+          {
+            "text": "<KeepAlive>",
+            "href": "/api/built-in-components.html#keepalive"
+          },
+          {
+            "text": "<Teleport>",
+            "href": "/api/built-in-components.html#teleport"
+          },
+          {
+            "text": "<Suspense>",
+            "href": "/api/built-in-components.html#suspense"
+          },
+          {
+            "text": "<component>",
+            "href": "/api/built-in-special-elements.html#component"
+          },
+          {
+            "text": "<slot>",
+            "href": "/api/built-in-special-elements.html#slot"
+          },
+          {
+            "text": "key",
+            "href": "/api/built-in-special-attributes.html#key"
+          },
+          {
+            "text": "ref",
+            "href": "/api/built-in-special-attributes.html#ref"
+          },
+          {
+            "text": "is",
+            "href": "/api/built-in-special-attributes.html#is"
+          }
+        ]
+      }
+    ]
+  },
+  "单文件组件": {
+    "h2": "单文件组件",
+    "list": [
+      {
+        "h3": "语法定义<script setup>CSS 功能",
+        "list": [
+          {
+            "text": "总览",
+            "href": "/api/sfc-spec.html#overview"
+          },
+          {
+            "text": "相应语言块",
+            "href": "/api/sfc-spec.html#language-blocks"
+          },
+          {
+            "text": "自动名称推导",
+            "href": "/api/sfc-spec.html#automatic-name-inference"
+          },
+          {
+            "text": "预处理器",
+            "href": "/api/sfc-spec.html#pre-processors"
+          },
+          {
+            "text": "Src 导入",
+            "href": "/api/sfc-spec.html#src-imports"
+          },
+          {
+            "text": "注释",
+            "href": "/api/sfc-spec.html#comments"
+          },
+          {
+            "text": "基本语法",
+            "href": "/api/sfc-script-setup.html#basic-syntax"
+          },
+          {
+            "text": "响应式",
+            "href": "/api/sfc-script-setup.html#reactivity"
+          },
+          {
+            "text": "使用组件",
+            "href": "/api/sfc-script-setup.html#using-components"
+          },
+          {
+            "text": "使用自定义指令",
+            "href": "/api/sfc-script-setup.html#using-custom-directives"
+          },
+          {
+            "text": "defineProps() 和 defineEmits()",
+            "href": "/api/sfc-script-setup.html#defineprops-defineemits"
+          },
+          {
+            "text": "defineExpose",
+            "href": "/api/sfc-script-setup.html#defineexpose"
+          },
+          {
+            "text": "useSlots() 和 useAttrs()",
+            "href": "/api/sfc-script-setup.html#useslots-useattrs"
+          },
+          {
+            "text": "与普通的 <script> 一起使用",
+            "href": "/api/sfc-script-setup.html#usage-alongside-normal-script"
+          },
+          {
+            "text": "顶层 await",
+            "href": "/api/sfc-script-setup.html#top-level-await"
+          },
+          {
+            "text": "针对 TypeScript 的功能",
+            "href": "/api/sfc-script-setup.html#typescript-only-features"
+          },
+          {
+            "text": "限制",
+            "href": "/api/sfc-script-setup.html#restrictions"
+          },
+          {
+            "text": "CSS 作用域",
+            "href": "/api/sfc-css-features.html#scoped-css"
+          },
+          {
+            "text": "CSS Modules",
+            "href": "/api/sfc-css-features.html#css-modules"
+          },
+          {
+            "text": "CSS 中的 v-bind()",
+            "href": "/api/sfc-css-features.html#v-bind-in-css"
+          }
+        ]
+      }
+    ]
+  },
+  "进阶 API": {
+    "h2": "进阶 API",
+    "list": [
+      {
+        "h3": "渲染函数服务端渲染TypeScript 工具类自定义渲染",
+        "list": [
+          {
+            "text": "h()",
+            "href": "/api/render-function.html#h"
+          },
+          {
+            "text": "mergeProps()",
+            "href": "/api/render-function.html#mergeprops"
+          },
+          {
+            "text": "cloneVNode()",
+            "href": "/api/render-function.html#clonevnode"
+          },
+          {
+            "text": "isVNode()",
+            "href": "/api/render-function.html#isvnode"
+          },
+          {
+            "text": "resolveComponent()",
+            "href": "/api/render-function.html#resolvecomponent"
+          },
+          {
+            "text": "resolveDirective()",
+            "href": "/api/render-function.html#resolvedirective"
+          },
+          {
+            "text": "withDirectives()",
+            "href": "/api/render-function.html#withdirectives"
+          },
+          {
+            "text": "withModifiers()",
+            "href": "/api/render-function.html#withmodifiers"
+          },
+          {
+            "text": "renderToString()",
+            "href": "/api/ssr.html#rendertostring"
+          },
+          {
+            "text": "renderToNodeStream()",
+            "href": "/api/ssr.html#rendertonodestream"
+          },
+          {
+            "text": "pipeToNodeWritable()",
+            "href": "/api/ssr.html#pipetonodewritable"
+          },
+          {
+            "text": "renderToWebStream()",
+            "href": "/api/ssr.html#rendertowebstream"
+          },
+          {
+            "text": "pipeToWebWritable()",
+            "href": "/api/ssr.html#pipetowebwritable"
+          },
+          {
+            "text": "renderToSimpleStream()",
+            "href": "/api/ssr.html#rendertosimplestream"
+          },
+          {
+            "text": "useSSRContext()",
+            "href": "/api/ssr.html#usessrcontext"
+          },
+          {
+            "text": "PropType<T>",
+            "href": "/api/utility-types.html#proptypet"
+          },
+          {
+            "text": "ComponentCustomProperties",
+            "href": "/api/utility-types.html#componentcustomproperties"
+          },
+          {
+            "text": "ComponentCustomOptions",
+            "href": "/api/utility-types.html#componentcustomoptions"
+          },
+          {
+            "text": "ComponentCustomProps",
+            "href": "/api/utility-types.html#componentcustomprops"
+          },
+          {
+            "text": "CSSProperties",
+            "href": "/api/utility-types.html#cssproperties"
+          },
+          {
+            "text": "createRenderer()",
+            "href": "/api/custom-renderer.html#create-renderer"
+          }
+        ]
+      }
+    ]
+  }
+}

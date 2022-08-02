@@ -7,6 +7,7 @@ import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/webpack";
 import { webpackPlugin } from "./plugins/word";
 import { webpackPlugin as scssPlugin } from "./plugins/scss";
+import { webpackPlugin as cheerioPlugin } from "./plugins/cheerio";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
@@ -59,6 +60,7 @@ export default defineConfig({
 
       scssPlugin(),
       webpackPlugin(),
+      cheerioPlugin(),
     ],
     module: {
       rules: [
