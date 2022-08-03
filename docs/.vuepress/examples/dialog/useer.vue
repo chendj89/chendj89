@@ -17,7 +17,9 @@ const click = function () {
   }).then((res) => {});
 };
 const click2 = function () {
-  useDialog(extend).then((res) => {});
+  useDialog(extend, {
+    msg: "飞翔的鱼",
+  }).then((res) => {});
 };
 </script>
 

@@ -7,7 +7,9 @@
     </template>
     <template v-else>
       <div style="padding-top: var(--nav-height)">
-        <Content></Content>
+        <div style="padding: 0 50px; width: 1200px; margin: 0 auto">
+          <Content></Content>
+        </div>
       </div>
     </template>
     <vp-tool></vp-tool>

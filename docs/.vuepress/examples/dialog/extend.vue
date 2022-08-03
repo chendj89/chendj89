@@ -2,7 +2,7 @@
   <el-dialog
     title="提示"
     :visible.sync="dialogVisible"
-    width="30%"
+    width="500px"
     :before-close="handleClose"
   >
     <span>这是一段信息{{ hero.name }}</span>
@@ -25,9 +25,17 @@ import {
   withDefaults,
 } from "vue";
 let props = defineProps({
-  msg: String,
-  from: String,
+  msg: {
+    type: String,
+    default: "msg",
+    require: true,
+  },
+  from: {
+    type: String,
+    default: "from",
+  },
 });
+
 const ins = getCurrentInstance();
 const dialogVisible = ref(true);
 const handleClose = (done) => {
