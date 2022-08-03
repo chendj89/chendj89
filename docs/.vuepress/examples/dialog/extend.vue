@@ -6,6 +6,7 @@
     :before-close="handleClose"
   >
     <span>这是一段信息{{ hero.name }}</span>
+    <span>{{ props.msg }}---{{ props.from }}</span>
     <span slot="footer" class="dialog-footer">
       <el-button @click="handleClose">取 消</el-button>
       <el-button type="primary" @click="handleClose">确 定</el-button>
@@ -14,10 +15,18 @@
 </template>
 
 <script setup>
-import { ref, reactive, getCurrentInstance, onUnmounted, onMounted } from "vue";
-const props = defineProps({
-   msg:String,
-   from:String
+// 有默认值
+import {
+  ref,
+  reactive,
+  getCurrentInstance,
+  onUnmounted,
+  onMounted,
+  withDefaults,
+} from "vue";
+let props = defineProps({
+  msg: String,
+  from: String,
 });
 const ins = getCurrentInstance();
 const dialogVisible = ref(true);
@@ -28,7 +37,7 @@ let hero = reactive({
   name: ins.proxy.$hero.format("嘻嘻"),
 });
 onMounted(() => {
-   console.log(props);
+  console.log(props);
 });
 
 onUnmounted(() => {
@@ -36,11 +45,4 @@ onUnmounted(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
+<style lang="scss" scoped></style>

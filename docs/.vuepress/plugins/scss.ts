@@ -7,7 +7,12 @@ export const unplugin = createUnplugin((options) => {
   return {
     name: "scss3",
     transformInclude(id) {
-      return id.endsWith(".md");
+      if(id.endsWith("readme.md")){
+        return false;
+      }else {
+        return id.endsWith(".md");
+      }
+      
     },
     async transform(code, id) {
       let reg1 = /^@\[code\s*(\{\s*[\w,]*\s*\})?\s*\]\(.*\)\s*$/gm;

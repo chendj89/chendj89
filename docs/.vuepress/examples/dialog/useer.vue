@@ -1,20 +1,23 @@
 <template>
-  <div @click="click">使用对话框</div>
+  <div>
+    <el-link type="primary" @click="click">基础弹窗</el-link>
+    <el-link type="primary" @click="click2">加强弹窗</el-link>
+  </div>
 </template>
 
 <script setup>
 import { getCurrentInstance } from "vue";
-import Basic from "./basic.vue";
-import func from "./func.vue";
+import basic from "./basic.vue";
+import extend from "./extend.vue";
 import { useDialog } from "@docs/.vuepress/utils/useDialog";
-let ins = getCurrentInstance();
-let p1 = getCurrentInstance();
-console.log(p1);
 const click = function () {
-  useDialog(Basic, {
-    _____________game: "-----",
-    ins,
+  useDialog(basic, {
+    msg: "乞丐版",
+    from: "basic",
   }).then((res) => {});
+};
+const click2 = function () {
+  useDialog(extend).then((res) => {});
 };
 </script>
 
