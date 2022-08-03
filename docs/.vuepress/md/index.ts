@@ -113,8 +113,9 @@ export const mdPlugin = (md: any) => {
         return rawCode;
       }
     };
-  const { fence, code_block: codeBlock } = md.renderer.rules;
+  const { fence, code_block: codeBlock, image } = md.renderer.rules;
 
   md.renderer.rules.fence = wrap(fence);
   md.renderer.rules.code_block = wrap(codeBlock);
+  // 重写image模块
 };

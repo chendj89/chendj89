@@ -67,7 +67,9 @@ import LogosStylefmt from "~icons/logos/stylefmt";
 import LogosGrav from "~icons/logos/grav";
 import LogosParse from "~icons/logos/parse";
 import LogosGoogleCloud from "~icons/logos/google-cloud";
+import LogosChrome from "~icons/logos/chrome";
 import LogosDeno from "~icons/logos/deno";
+import TwemojiVideoGame from "~icons/twemoji/video-game";
 
 let show = useStorage("vp-tool", {
   menu: false,
@@ -171,6 +173,12 @@ const menu = reactive({
       link: "https://tools.fun/json.html",
       theme: "",
     },
+    {
+      com: LogosVitejs,
+      name: "vuepress",
+      link: "https://www.vuepress.cn/",
+      theme: "",
+    },
   ],
   tools: [
     {
@@ -180,7 +188,7 @@ const menu = reactive({
       theme: "",
     },
     {
-      com: LogosGoogleCloud,
+      com: LogosChrome,
       name: "浏览器插件",
       link: "https://www.crxfun.com/",
       theme: "",
@@ -189,6 +197,12 @@ const menu = reactive({
       com: LogosDeno,
       name: "deno",
       link: "https://www.denojs.cn/",
+      theme: "",
+    },
+    {
+      com: TwemojiVideoGame,
+      name: "游戏",
+      link: "https://www.yikm.net/",
       theme: "",
     },
   ],

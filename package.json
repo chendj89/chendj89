@@ -42,6 +42,7 @@
     "escape-html": "^1.0.3",
     "htmldom": "^4.0.11",
     "js-beautify": "^1.14.4",
+    "markdown-it-imsize": "^2.0.1",
     "postcss": "^8.4.14",
     "postcss-scss": "^4.0.4",
     "prism-theme-vars": "^0.2.3",

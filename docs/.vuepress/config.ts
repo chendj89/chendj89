@@ -8,6 +8,7 @@ import Components from "unplugin-vue-components/webpack";
 import { webpackPlugin } from "./plugins/word";
 import { webpackPlugin as scssPlugin } from "./plugins/scss";
 import { webpackPlugin as cheerioPlugin } from "./plugins/cheerio";
+import markdownItImage from "markdown-it-imsize";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
@@ -25,6 +26,7 @@ export default defineConfig({
     extendMarkdown: (md) => {
       mdPlugin(md);
       // mdLink(md);
+      markdownItImage(md);
     },
   },
   configureWebpack: {
