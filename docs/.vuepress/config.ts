@@ -8,7 +8,7 @@ import Components from "unplugin-vue-components/webpack";
 import { webpackPlugin } from "./plugins/word";
 import { webpackPlugin as scssPlugin } from "./plugins/scss";
 import { webpackPlugin as cheerioPlugin } from "./plugins/cheerio";
-import markdownItImage from "markdown-it-imsize";
+import { imsize_plugin } from "./md/image";
 export default defineConfig({
   base: process.env.NODE_ENV !== "production" ? undefined : "/chendj89/",
   title: "Vue2.7",
@@ -25,8 +25,19 @@ export default defineConfig({
     toc: { includeLevel: [1, 2, 3] },
     extendMarkdown: (md) => {
       mdPlugin(md);
-      // mdLink(md);
-      markdownItImage(md);
+      imsize_plugin(md, {
+        render(src: string, attrs: any) {
+          if (src.includes("?")) {
+            let src_arr = src.split("?");
+            // 替换最后的)
+            src_arr[1]=src_arr[1].replace(")","");
+            src_arr[1]=src_arr[1].replace(/\&/gm,';').replace(/\=/gm,':');
+            console.log(src_arr[1]);
+            
+            attrs.push(["style", src_arr[1]]);
+          }
+        },
+      });
     },
   },
   configureWebpack: {
