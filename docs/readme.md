@@ -35,6 +35,10 @@ dialog/useer
 
 ```md
 ![🤡](@docs/.vuepress/public/assets/xiaochou.jpg?width=60px&height=60px)
+<!-- 旋转图片 -->
+![🤡](@docs/.vuepress/public/assets/xiaochou.jpg?width=60px&height=60px&transform:rotate(45deg))
 ```
 
-![🤡](@docs/.vuepress/public/assets/xiaochou.jpg?width=60px&height=60px)
+![🤡](@docs/.vuepress/public/assets/xiaochou.jpg?width=60px&height=60px)  
+
+![🤡](@docs/.vuepress/public/assets/xiaochou.jpg?width=60px&height=60px&transform:rotate(45deg))

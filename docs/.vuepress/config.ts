@@ -30,10 +30,7 @@ export default defineConfig({
           if (src.includes("?")) {
             let src_arr = src.split("?");
             // 替换最后的)
-            src_arr[1]=src_arr[1].replace(")","");
-            src_arr[1]=src_arr[1].replace(/\&/gm,';').replace(/\=/gm,':');
-            console.log(src_arr[1]);
-            
+            src_arr[1]=src_arr[1].replace(/\)$/,"").replace(/\&/gm,';').replace(/\=/gm,':');
             attrs.push(["style", src_arr[1]]);
           }
         },
