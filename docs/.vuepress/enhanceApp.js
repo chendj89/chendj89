@@ -6,6 +6,8 @@ import "./theme/styles/app.scss";
 import "./theme/index.scss";
 import words from "./plugins/data.json";
 
+import Ok from "./theme/ok/index"
+
 // 使用异步函数也是可以的
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -20,6 +22,7 @@ export default ({
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component);
   }
+  Vue.use(Ok);
   Vue.use(ElementUI);
   Vue.prototype.$http = {
     post,
