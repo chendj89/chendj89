@@ -71,11 +71,11 @@ import LogosChrome from "~icons/logos/chrome";
 import LogosDeno from "~icons/logos/deno";
 import TwemojiVideoGame from "~icons/twemoji/video-game";
 
-let show = useStorage("vp-tool", {
+let show = useStorage("vp-tool",reactive( {
   menu: false,
   work: false,
   tools: false,
-});
+}));
 useEventListener(document, "keydown", (e) => {
   var keyCode = e.key || e.code;
   if (e.altKey && keyCode == 1) {
