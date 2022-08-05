@@ -1,7 +1,11 @@
 <template>
   <div>
     <slot></slot>
-    <div>{{msg}}</div>
+    <div>{{ msg }}</div>
+    <div>{{ item1 }}</div>
+    <div>{{ t1 }}</div>
+    <div>{{ item2 }}</div>
+    <div>{{ item3 }}</div>
   </div>
 </template>
 
@@ -9,7 +13,8 @@
 export default {
   data() {
     return {
-      msg:"0🤡🤡🤡0"
+      msg: "0🤡🤡🤡0",
+      t1: "t1:" + this.item1,
     };
   },
   props: {

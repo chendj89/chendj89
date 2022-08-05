@@ -1,11 +1,11 @@
-import Index from "./index.vue";
+import Com from "./index.vue";
 const install = function (Vue, opts = {}) {
-  let Index2=Vue.extend(Index,{
-    propsData:{
-      item1:9
+  for (const [attr, value] of Object.entries(opts)) {
+    if (Com.props[attr]) {
+      Com.props[attr].default = value;
     }
-  });
-  Vue.component("OkT", Index2);
+  }
+  Vue.component("OkT", Com);
 };
 
 export default install;

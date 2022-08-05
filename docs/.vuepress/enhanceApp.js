@@ -6,7 +6,7 @@ import "./theme/styles/app.scss";
 import "./theme/index.scss";
 import words from "./plugins/data.json";
 
-import Ok from "./theme/ok/index"
+import Ok from "./theme/ok/index.js";
 
 // 使用异步函数也是可以的
 export default ({
@@ -22,7 +22,11 @@ export default ({
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component);
   }
-  Vue.use(Ok);
+  Vue.use(Ok, {
+    item1: "👻",
+    item2: 2,
+    item3: 3,
+  });
   Vue.use(ElementUI);
   Vue.prototype.$http = {
     post,
