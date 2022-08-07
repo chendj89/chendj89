@@ -1,6 +1,6 @@
 import Vue from "vue";
 export function useDialog(Component, options) {
-  return ((Component, { $el, ...reset }={}) => {
+  return ((Component, { $el, ...reset } = {}) => {
     return new Promise((resolve, reject) => {
       let target = $el || document.body;
       const ComponentConstructor = Vue.extend(Component);
@@ -17,9 +17,12 @@ export function useDialog(Component, options) {
         reject(params);
       };
       let instance = new ComponentConstructor(
-        Object.assign({ el: document.createElement("div") }, {
-          propsData:reset
-        })
+        Object.assign(
+          { el: document.createElement("div") },
+          {
+            propsData: reset,
+          }
+        )
       );
       function destroyInstance() {
         target.removeChild(instance.$el);

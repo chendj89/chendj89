@@ -7,13 +7,17 @@
 <script>
 export default {
   data() {
-    console.log(this);
-    return {};
+    return {
+      p1: "000",
+    };
   },
   methods: {
     close() {
       this.$resolve({ msg: "我是表格" });
     },
+  },
+  mounted() {
+    console.log("------------");
   },
   destroyed() {
     console.log("销毁表格");
