@@ -52,5 +52,14 @@
     "desc": "adj. 空的；空洞的，无意义的；空虚的；无知的，愚蠢的；无用的，徒劳的",
     "lang": "英\n                                    \n                                                    \n                                ",
     "playbackRate": 1
+  },
+  "global": {
+    "name": "global",
+    "soundmark": "[ˈɡləʊb(ə)l]",
+    "src": "https://dict.youdao.com/dictvoice?audio=global&type=1",
+    "volume": 1,
+    "desc": "adj. 全球的，全世界的；全面的，整体��；（计算机）全局的；球形的",
+    "lang": "英\n                                    \n                                                    \n                                ",
+    "playbackRate": 1
   }
 }
