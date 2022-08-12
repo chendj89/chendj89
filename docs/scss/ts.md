@@ -27,4 +27,11 @@ declare global {
 }
 export function useName() {}
 ```
+vue单文件组件类型
+```ts
+import type { DefineComponent } from "vue";
+type Component = DefineComponent<{}, {}, any>;
+// import Com from "./Com.vue";
+
+```
 
