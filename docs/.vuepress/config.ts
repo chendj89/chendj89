@@ -142,7 +142,9 @@ export default defineConfig({
     [
       "named-chunks",
       {
-        pageChunkName: ({ relativePath }) => relativePath,
+        pageChunkName: (page: any) => {
+          return page.relativePath + page.key.slice(1);
+        },
       },
     ],
   ],
