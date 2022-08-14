@@ -50,6 +50,7 @@
     "unplugin-icons": "^0.14.8",
     "unplugin-vue-components": "^0.21.0",
     "vuepress-plugin-container": "^2.1.5",
+    "vuepress-plugin-named-chunks": "^1.1.4",
     "watchpack": "^1.6.1"
   }
 }

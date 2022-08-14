@@ -30,7 +30,10 @@ export default defineConfig({
           if (src.includes("?")) {
             let src_arr = src.split("?");
             // 替换最后的)
-            src_arr[1]=src_arr[1].replace(/\)$/,"").replace(/\&/gm,';').replace(/\=/gm,':');
+            src_arr[1] = src_arr[1]
+              .replace(/\)$/, "")
+              .replace(/\&/gm, ";")
+              .replace(/\=/gm, ":");
             attrs.push(["style", src_arr[1]]);
           }
         },
@@ -134,6 +137,12 @@ export default defineConfig({
             info ? `<summary>${info}</summary>` : ""
           }\n`,
         after: () => "</details>\n",
+      },
+    ],
+    [
+      "named-chunks",
+      {
+        pageChunkName: ({ relativePath }) => relativePath,
       },
     ],
   ],
