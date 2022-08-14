@@ -71,11 +71,14 @@ import LogosChrome from "~icons/logos/chrome";
 import LogosDeno from "~icons/logos/deno";
 import TwemojiVideoGame from "~icons/twemoji/video-game";
 
-let show = useStorage("vp-tool",reactive( {
-  menu: false,
-  work: false,
-  tools: false,
-}));
+let show = useStorage(
+  "vp-tool",
+  reactive({
+    menu: false,
+    work: false,
+    tools: false,
+  })
+);
 useEventListener(document, "keydown", (e) => {
   var keyCode = e.key || e.code;
   if (e.altKey && keyCode == 1) {
@@ -164,7 +167,7 @@ const menu = reactive({
     {
       com: LogosVue,
       name: "vue3",
-      link: "https://staging-cn.vuejs.org/",
+      link: "https://cn.vuejs.org/api/",
       theme: "",
     },
     {
