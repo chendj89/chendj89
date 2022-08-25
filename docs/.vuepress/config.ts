@@ -139,13 +139,13 @@ export default defineConfig({
         after: () => "</details>\n",
       },
     ],
-    [
-      "named-chunks",
-      {
-        pageChunkName: (page: any) => {
-          return page.relativePath + page.key.slice(1);
-        },
-      },
-    ],
+    // [
+    //   "named-chunks",
+    //   {
+    //     pageChunkName: (page: any) => {
+    //       return page.relativePath + page.key.slice(1);
+    //     },
+    //   },
+    // ],
   ],
 });
