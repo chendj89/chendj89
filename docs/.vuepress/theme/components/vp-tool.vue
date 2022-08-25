@@ -96,6 +96,7 @@ useEventListener(document, "keydown", (e) => {
     show.value.work = false;
     show.value.tools = !show.value.tools;
   }
+  console.log(show.value);
 });
 watch(show.value, (val) => {
   localStorage.setItem("vp-tool", JSON.stringify(val, null, 2));
