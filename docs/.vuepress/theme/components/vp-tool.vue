@@ -50,7 +50,7 @@
 
 <script setup>
 import { reactive, watch, ref } from "vue";
-import { useStorage, useEventListener } from "@vueuse/core";
+import {useEventListener } from "@vueuse/core";
 import DashiconsTranslation from "~icons/dashicons/translation";
 import SimpleIconsBaidu from "~icons/simple-icons/baidu";
 import LogosCodepenIcon from "~icons/logos/codepen-icon";
@@ -76,6 +76,7 @@ let show = reactive({
   work: false,
   tools: false,
 });
+console.log(show);
 useEventListener(document, "keydown", (e) => {
   var keyCode = e.key || e.code;
   if (e.altKey && keyCode == 1) {
