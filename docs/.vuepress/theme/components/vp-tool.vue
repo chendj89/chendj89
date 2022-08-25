@@ -74,7 +74,7 @@ import TwemojiVideoGame from "~icons/twemoji/video-game";
 let show = useStorage(
   "vp-tool",
   reactive({
-    menu: false,
+    menu: true,
     work: false,
     tools: false,
   })
