@@ -12,7 +12,7 @@
         </div>
       </div>
     </template>
-    <vp-tool></vp-tool>
+    <vp-tool v-if="loaded"></vp-tool>
   </div>
 </template>
 
@@ -21,6 +21,10 @@ import { ref, computed, getCurrentInstance, onMounted } from "vue";
 let ins = getCurrentInstance();
 let showSlideBar = computed(() => {
   return ins.proxy.$route.fullPath !== "/";
+});
+let loaded=ref(false);
+onMounted(()=>{
+  loaded.value=true;
 });
 </script>
 
