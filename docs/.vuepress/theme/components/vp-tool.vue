@@ -135,13 +135,13 @@ const menu = reactive({
     // {
     //   com: LogosVue,
     //   name: "vue3",
-    //   link: "https://staging-cn.vuejs.org/",
+    //   link: "https://cn.vuejs.org/",
     //   theme: "",
     // },
     {
       com: LogosVue,
       name: "vue2",
-      link: "https://cn.vuejs.org/v2/guide/",
+      link: "https://v2.cn.vuejs.org/",
       theme: "",
     },
     {
