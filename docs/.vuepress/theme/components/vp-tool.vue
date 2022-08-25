@@ -72,7 +72,7 @@ import LogosDeno from "~icons/logos/deno";
 import TwemojiVideoGame from "~icons/twemoji/video-game";
 
 let show = reactive({
-  menu: false,
+  menu: true,
   work: false,
   tools: false,
 });
