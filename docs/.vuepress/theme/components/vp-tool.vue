@@ -71,35 +71,29 @@ import LogosChrome from "~icons/logos/chrome";
 import LogosDeno from "~icons/logos/deno";
 import TwemojiVideoGame from "~icons/twemoji/video-game";
 
-let show = useStorage(
-  "vp-tool",
-  reactive({
-    menu: true,
-    work: false,
-    tools: false,
-  })
-);
+let show = reactive({
+  menu: false,
+  work: false,
+  tools: false,
+});
 useEventListener(document, "keydown", (e) => {
   var keyCode = e.key || e.code;
   if (e.altKey && keyCode == 1) {
-    show.value.work = false;
-    show.value.tools = false;
-    show.value.menu = !show.value.menu;
+    show.work = false;
+    show.tools = false;
+    show.menu = !show.menu;
   }
   if (e.altKey && keyCode == 2) {
-    show.value.menu = false;
-    show.value.tools = false;
-    show.value.work = !show.value.work;
+    show.menu = false;
+    show.tools = false;
+    show.work = !show.work;
   }
   if (e.altKey && keyCode == 3) {
-    show.value.menu = false;
-    show.value.work = false;
-    show.value.tools = !show.value.tools;
+    show.menu = false;
+    show.work = false;
+    show.tools = !show.tools;
   }
-  console.log(show.value);
-});
-watch(show.value, (val) => {
-  localStorage.setItem("vp-tool", JSON.stringify(val, null, 2));
+  console.log(show);
 });
 const menu = reactive({
   list: [
