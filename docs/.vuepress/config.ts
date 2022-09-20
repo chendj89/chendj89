@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { defineConfig } from "vuepress/config";
-import { mdPlugin } from "./md";
+import { mdPlugin, mdImage } from "./md";
 import Icons from "unplugin-icons/webpack";
 import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/webpack";
@@ -25,19 +25,7 @@ export default defineConfig({
     toc: { includeLevel: [1, 2, 3] },
     extendMarkdown: (md) => {
       mdPlugin(md);
-      imsize_plugin(md, {
-        render(src: string, attrs: any) {
-          if (src.includes("?")) {
-            let src_arr = src.split("?");
-            // 替换最后的)
-            src_arr[1] = src_arr[1]
-              .replace(/\)$/, "")
-              .replace(/\&/gm, ";")
-              .replace(/\=/gm, ":");
-            attrs.push(["style", src_arr[1]]);
-          }
-        },
-      });
+      mdImage(md, {});
     },
   },
   configureWebpack: {
