@@ -119,3 +119,25 @@ export const mdPlugin = (md: any) => {
   md.renderer.rules.code_block = wrap(codeBlock);
   // 重写image模块
 };
+export function mdImage(md, opts) {
+  md.renderer.rules.image = function (tokens, idx, options, env, slf) {
+    var token = tokens[idx];
+    token.attrs[token.attrIndex("alt")][1] = slf.renderInlineAsText(
+      token.children,
+      options,
+      env
+    );
+    let src = token.attrs[token.attrIndex("src")][1];
+    if (src.includes("?")) {
+      let org = src.split("?");
+      token.attrs[token.attrIndex("src")][1] = org[0];
+      let style = org[1]
+        .replace(/&/g, ";")
+        .replace(/=/g, ":")
+        .replace(/\%5B/, "(")
+        .replace(/\%5D/, ")");
+      token.attrs.push(["style", style]);
+    }
+    return slf.renderToken(tokens, idx, options);
+  };
+}
