@@ -50,7 +50,7 @@
 
 <script setup>
 import { reactive, watch, ref } from "vue";
-import {useEventListener } from "@vueuse/core";
+import { useEventListener } from "@vueuse/core";
 import DashiconsTranslation from "~icons/dashicons/translation";
 import SimpleIconsBaidu from "~icons/simple-icons/baidu";
 import LogosCodepenIcon from "~icons/logos/codepen-icon";
