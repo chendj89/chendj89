@@ -1,22 +1,34 @@
-<script setup>
-const props = defineProps({
-  // v-model
-  modelValue: String,
-  // 修饰符
-  modelModifiers: { default: () => ({}) },
-});
+<template>
+  <input
+    type="text"
+    :value="modelValue"
+    @input="emitValue('modelValue', $event)"
+  />
+</template>
 
-const emit = defineEmits(["update:modelValue"]);
-function emitValue(e) {
-  let value = e.target.value;
-  emit("update:modelValue", value);
-  if (true) {
-    // value = value.replace(/[^\d.]/g, "");
-    // e.target.value = value;
-  }
-}
+<script>
+export default {
+  model: {
+    prop: "modelValue",
+    event: "update:modelValue",
+  },
+  props: {
+    modelValue: String,
+    modelModifiers: {
+      default: () => ({}),
+    },
+  },
+  methods: {
+    emitValue(propName, evt) {
+      let val = evt.target.value;
+      if (true) {
+        val = val.replace(/[^\d.]/g, "");
+        this.$emit(`update:${propName}`, val);
+        evt.target.value = val;
+      }
+    },
+  },
+};
 </script>
 
-<template>
-  <input type="text" :value="modelValue" @input="emitValue" />
-</template>
+<style></style>
