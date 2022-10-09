@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div>只能输入数字和.</div>
-    <NumInput v-model="input"></NumInput>
+    <NumInput class="el-input__inner" v-model="input"></NumInput>
     <div>{{input}}</div>
   </div>
 </template>

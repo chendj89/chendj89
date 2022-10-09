@@ -10,7 +10,7 @@ sidebar: false
 dialog/useer
 :::
 
-:::demo
+:::demo 只能输入数字和.
 input/numInputContainer
 :::
 
