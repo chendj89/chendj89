@@ -10,6 +10,10 @@ sidebar: false
 dialog/useer
 :::
 
+:::demo
+input/numInputContainer
+:::
+
 ### 引用文件
 
 - 引用整个文件

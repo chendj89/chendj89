@@ -76,7 +76,6 @@ let show = reactive({
   work: false,
   tools: false,
 });
-console.log(show);
 useEventListener(document, "keydown", (e) => {
   var keyCode = e.key || e.code;
   if (e.altKey && keyCode == 1) {
@@ -94,7 +93,6 @@ useEventListener(document, "keydown", (e) => {
     show.work = false;
     show.tools = !show.tools;
   }
-  console.log(show);
 });
 const menu = reactive({
   list: [
