@@ -7,7 +7,7 @@
     </template>
     <template v-else>
       <div style="padding-top: var(--nav-height)">
-        <div style="padding: 0 50px; width: 1200px; margin: 0 auto">
+        <div style="padding: 0 50px; max-width: 1200px; margin: 0 auto">
           <Content></Content>
         </div>
       </div>
@@ -22,9 +22,9 @@ let ins = getCurrentInstance();
 let showSlideBar = computed(() => {
   return ins.proxy.$route.fullPath !== "/";
 });
-let loaded=ref(false);
-onMounted(()=>{
-  loaded.value=true;
+let loaded = ref(false);
+onMounted(() => {
+  loaded.value = true;
 });
 </script>
 
