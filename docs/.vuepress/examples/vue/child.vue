@@ -6,6 +6,8 @@
   </div>
 </template>
 <script setup>
+import { onMounted } from "vue";
+
 const props = defineProps({
   name: String,
   height: String,
@@ -25,4 +27,7 @@ const updateUserHeight = () => {
 const updateUserAge = () => {
   emit("updateUserAge", props.age);
 };
+onMounted(()=>{
+    console.log("child mounted");
+})
 </script>

@@ -1,5 +1,10 @@
 <template>
-  <Child v-bind="userInfo" v-on="userHandler"></Child>
+  <!-- @hook 快捷监听事件 -->
+  <Child
+    @hook:mounted="childMounted"
+    v-bind="userInfo"
+    v-on="userHandler"
+  ></Child>
 </template>
 <script setup>
 import { reactive } from "vue";
@@ -20,5 +25,8 @@ const userHandler = {
     console.log(userHeight);
   },
   // ...接收更多子组件事件
+};
+const childMounted = () => {
+  console.log("---");
 };
 </script>

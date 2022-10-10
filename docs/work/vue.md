@@ -21,6 +21,7 @@ cnpm
 ```sh
 npm install -g cnpm --registry=https://registry.npmmirror.com
 ```
+
 :::demo vue2、vue3`v-bind`、`v-on`快速绑定属性和方法
 vue/parent
 :::
