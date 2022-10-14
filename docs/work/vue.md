@@ -25,3 +25,10 @@ npm install -g cnpm --registry=https://registry.npmmirror.com
 :::demo vue2、vue3`v-bind`、`v-on`快速绑定属性和方法
 vue/parent
 :::
+
+
+#### 生产环境检查 Vue 应用程序[1]
+
+
+
+[1]:https://blog.csdn.net/weixin_29449593/article/details/112160157
