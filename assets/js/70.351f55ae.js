@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[70],{453:function(n,e,t){"use strict";t.r(e);var s=t(0),p=Object(s.defineComponent)({__name:"Layout",setup:n=>({__sfc:!0})}),u=t(20),l=Object(u.a)(p,(function(){var n=this._self._c;this._self._setupProxy;return n("ClientOnly",[n("vp-app")],1)}),[],!1,null,null,null);e.default=l.exports}}]);
